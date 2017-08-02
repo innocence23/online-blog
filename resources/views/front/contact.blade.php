@@ -130,7 +130,7 @@
                     return false;
                 }
 
-                $.post("/api/send-email",
+                $.post("/api/v1/send-email",
 					$("#contact-form").serialize(),
                     function(data){
                         swal("Good job!", "邮件发送成功，我们会尽快联系你", "success")

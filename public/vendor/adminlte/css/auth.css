@@ -1,0 +1,15 @@
+.auth-links {
+    margin-top: 10px;
+}
+
+/*添加登陆背景图*/
+.login-page {
+    background: url("/assets/img/bg.jpg");
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+.login-box {
+    margin:  auto !important;
+    padding-top: 12%;
+}

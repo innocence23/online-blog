@@ -4,15 +4,32 @@
 
 @section('main-content')
 	<div class="main main-raised">
-		<div class="blogs-3">
-			<div class="container">
+		<div class="container">
+			<div class="section" style="padding:50px 0 16px;">
+
+				@if (isset($categories))
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="nav nav-pills nav-pills-primary">
+								<li class="{{ \Request::is('blogs') ? 'active' : '' }}"><a href="{{ route('blogs') }}" >All</a></li>
+								@foreach( $categories as $category)
+									<li class="{{ \Request::is('blog/category/'.$category.'/*') ? 'active' : '' }}">
+										<a href="{{ route('blog.category',['category'=>$category, 'flag'=>'flag' ]) }}">{{$category}}</a>
+									</li>
+								@endforeach
+							</ul>
+							<div style="height: 20px;"></div>
+						</div>
+					</div>
+				@endif
+
 				<div class="row">
 					@foreach($blogs as $v)
-						<div class="col-md-4">
+						<div class="col-sm-3">
 							<div class="card card-profile">
 								<a href="{{ route('blog', $v->slug)}}" title="{{ $v->desc }}">
 									<div class="card-image">
-											<img class="img" src="{{ '/uploads/'.$v->pic }}">
+										<img class="img" src="{{ '/uploads/'.$v->pic }}">
 										<div class="colored-shadow" style="background-image: url({{ '/uploads/'.$v->pic }}); opacity: 1;">
 										</div>
 										<div class="ripple-container"></div>
@@ -25,22 +42,18 @@
 										</a>
 									</h5>
 
-									<h6 class="category text-gray">
-										作者：<a href="#pablo"><b>{{ $v->user->name }}</b></a>
+									<h6 class="category text-black">
+										<a href="#pablo"><b>{{ $v->user->name }}</b></a>
 										<b> {{ \Carbon\Carbon::parse($v->created_at)->diffForHumans() }} </b>
+										<a href="{{ route('blog.category', $v->category->name) }}"
+										   class="label label-info">{{$v->category->name}}</a>
 									</h6>
 
 									<div class="footer">
-										<p class="blog-category">
-											<i class="fa fa-list"></i>
-											<a href="{{ route('blog.category', $v->category->name) }}" style="margin: 0"
-											   class="btn btn-default btn-xs">{{$v->category->name}}</a>
-										</p>
 										<p class="blog-tags">
 											<i class="fa fa-tags"></i>
 											@foreach($v->tags as $tag)
-												<a href="{{ route('blog.tag', $tag->name) }}" style="margin: 0"
-												   class="label btn btn-default">{{$tag->name}}</a>
+												<a href="{{ route('blog.tag', $tag->name) }}" class="label label-success">{{$tag->name}}</a>
 											@endforeach
 										</p>
 									</div>
@@ -49,12 +62,10 @@
 						</div>
 					@endforeach
 				</div>
-				<div class="pagination-area text-center">
-					<ul class="pagination pagination-success pagination-area text-center">
-						{{  $blogs->render() }}
-					</ul>
-				</div>
+
+				{!! $blogs->links() !!}
 			</div>
+
 		</div>
 	</div>
 @endsection

@@ -97,6 +97,7 @@
             language: 'zh-cn',
             height: 300,
             allowedContent: true, //解决源码切换的问题
+            filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
             filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
         });
 
@@ -134,7 +135,7 @@
                         },
                         sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
                         pageNumber: 1,                       //初始化加载第一页，默认第一页
-                        pageSize: '{{$bootstrapLine}}',      //每页的记录行数（*）读取数据库配置
+                        pageSize:"{{$setting['bstable_line_count']}}",      //每页的记录行数（*）读取数据库配置
                         pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
                         clickToSelect: true,                //是否启用点击选中行
                         uniqueId: "id",                     //每一行的唯一标识，一般为主键列

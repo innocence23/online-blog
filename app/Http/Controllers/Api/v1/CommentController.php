@@ -36,7 +36,7 @@ class CommentController extends Controller
     public function ListComments($post_id)
     {
         $model = Comment::where(['post_id'=>$post_id, 'status'=>1])->orderBy('created_at', 'desc')
-            ->get(['id', 'uid', 'parent_id', 'post_id', 'support', 'content', 'created_at'])->keyBy('id');
+            ->get(['id', 'nickname', 'uid', 'parent_id', 'post_id', 'support', 'content', 'created_at'])->keyBy('id');
         echo tree($model);
     }
 }
@@ -51,7 +51,8 @@ function tree($arr, $pid=0){
             preg_match($preg, $content ,$result);
             if($result) {
                 $content =  preg_replace($preg,
-                    '<a href="/uploads/'.$result[1].'" data-fancybox><img src="/uploads/'.$result[1].'" width="40%" height="40%"/></a>',
+                    '<a href="/uploads/'.$result[1].'" data-fancybox><img src="/uploads/'.$result[1].'" style="max-height: 140px"
+ width="40%" height="40%"/></a>',
                     $content);
             }
             $str .=  <<<EOF
@@ -62,7 +63,7 @@ function tree($arr, $pid=0){
 </div>
 </a>
 <div class="media-body">
-<h4 class="media-heading">{$v->user->name}
+<h4 class="media-heading">{$v->nickname}
 <small> {$v->created_at}</small>
 </h4>
 <p>{$content}</p>

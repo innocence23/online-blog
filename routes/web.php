@@ -59,9 +59,23 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('comment/{comment}', 'CommentController@disable')->name('comment.disable');
     Route::get('comment', 'CommentController@index')->name('comment.index');
 
+    //前台用户
+    Route::get('front-user/lists', 'FrontUserController@getLists')->name('front-user.lists');
+    Route::post('front-user/{user}', 'FrontUserController@disable')->name('front-user.disable');
+    Route::post('front-user-reset/{user}', 'FrontUserController@reset')->name('front-user.reset');
+    Route::resource('front-user', 'FrontUserController', ['only' =>
+        ['index', 'store']
+    ]);
+
     //后台用户
     Route::get('admin-user/lists', 'AdminUserController@getLists')->name('admin-user.lists');
-    Route::resource('admin-user', 'AdminUserController');
+    Route::post('admin-user/{admin}', 'AdminUserController@disable')->name('admin-user.disable');
+    Route::post('admin-user-reset/{admin}', 'AdminUserController@reset')->name('admin-user.reset');
+    Route::resource('admin-user', 'AdminUserController', ['only' =>
+        ['index', 'store']
+    ]);
+
+
     //角色
     Route::get('role/lists', 'RoleController@getLists')->name('role.lists');
     Route::resource('role', 'RoleController');
@@ -110,7 +124,7 @@ Route::group([], function () {
 
     Route::get('blog/{blog}', 'IndexController@blog')->name('blog');
     Route::get('blog/tag/{tag}', 'IndexController@blogTag')->name('blog.tag');
-    Route::get('blog/category/{category}', 'IndexController@blogCategory')->name('blog.category');
+    Route::get('blog/category/{category}/{flag?}', 'IndexController@blogCategory')->name('blog.category');
     Route::get('blogs', 'IndexController@blogs')->name('blogs');
     Route::get('tops', 'IndexController@tops')->name('tops');
 

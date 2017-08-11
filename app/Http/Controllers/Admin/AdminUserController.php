@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Role;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -29,10 +29,7 @@ class AdminUserController extends Controller
         }
         $curpage = ($offset / $limit) + 1;
 
-        //\DB::enableQueryLog();
-        //$res = Role::where($where)->orderby($sort, $order)->paginate($limit, $columns = ['*'], $pageName = 'page', $page = null);
-        $res = Role::where($where)->orderby($sort, $order)->paginate($limit, ['*'], 'page', $curpage);
-        //echo  response()->json(\DB::getQueryLog()); die;
+        $res = Admin::where($where)->orderby($sort, $order)->paginate($limit, ['*'], 'page', $curpage);
         $total = $res->total();
         $rows = $res->items();
         $response = [
@@ -49,27 +46,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        return view('admin.roles.index');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function indexold()
-    {
-        return view('admin.roles.indexold');
-    }
-
-    /**
-     * Display the specified resource.
-     * @param Role $role
-     * @return mixed
-     */
-    public function show(Role $role)
-    {
-        return $role;
+        return view('admin.admin-users.index');
     }
 
     /**
@@ -81,58 +58,41 @@ class AdminUserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:10|unique:roles,name',
+            'name' => 'required|max:10|unique:admins,name',
+            'email' => 'required|email|max:30|unique:admins,email',
         ]);
-        $model = new Role();
+        $model = new Admin();
         $model->name = $request->input('name', '');
-        $model->display_name = $request->input('display_name', '');
-        $model->description  = $request->input('description', '');
+        $model->email = $request->input('email', '');
+        $model->password  = bcrypt($model->email . '@'); //默认密码邮箱加上一个@符
+        $model->remember_token = str_random(10);
         $model->save();
         return response($model);
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  Role $role
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Role $role)
-    {
-        return view('admin.roles.edit', ['id'=>$role->id]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Role $role
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Role $role)
-    {
-        $this->validate($request, [
-            'name' => 'required|max:10|unique:roles,name,'.$role->id,
-        ]);
-        $model = $role;
-        $model->name = $request->input('name', '');
-        $model->display_name = $request->input('display_name', '');
-        $model->description  = $request->input('description', '');
-        $model->save();
-        return response($model);
-    }
-
-    /**
-     * @param Role $role
+     * @param Admin $admin
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(Role $role)
+    public function reset(Admin $admin)
     {
-        // 正常删除
-        $role->delete();
-        // 强制删除
-        $role->users()->sync([]); // 删除关联数据
-        $role->perms()->sync([]); // 删除关联数据
+        $model = $admin;
+        $model->password = bcrypt($model->email .'@123');
+        $model->save();
+        return response()->json(['errorCode' => '0', 'errorMsg' => 'success']);
+    }
+
+    /**
+     * @param Request $request
+     * @param Admin $admin
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function disable(Request $request, Admin $admin)
+    {
+        $model = $admin;
+        $status = $request->input('status', 0) ;
+        $model->status = $status ? 0 : 1 ;
+        $model->save();
         return response()->json(['errorCode' => '0', 'errorMsg' => 'success']);
     }
 }

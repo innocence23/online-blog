@@ -139,7 +139,7 @@ return [
         '账号管理',
         [
             'text' => '前台用户管理',
-            'url'  => '/admin/user/',
+            'url'  => '/admin/front-user/',
             'icon' => 'user',
         ],
         [

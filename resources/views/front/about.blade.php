@@ -5,11 +5,13 @@
 @section('main-content')
 	<div class="main main-raised">
 		<div class="container">
+
 			{!! $aboutus !!}
+
 			<div class="about-contact" name="">
 				<a name="join-us"></a>
 				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
+					<div class="col-md-12">
 						<h2 class="text-center title">加入我们</h2>
 						<h4 class="text-center description">　信言不美，美言不信；知者不博，博者不知；善者不多，多者不善。</h4>
 						<form role="form" id="contact-form" method="post">

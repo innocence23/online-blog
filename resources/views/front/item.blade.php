@@ -5,12 +5,10 @@
 @section('main-content')
 	<div class="main main-raised">
 		<div class="container">
-			<div class="text-center">
-				<h2 class="title">注册协议</h2>
-				<div class="description text-center">
-					{!! $item !!}
-				</div>
-			</div>
+			<h2 class="title">免责声明</h2>
+
+			{!! $item !!}
+
 		</div>
 	</div>
 @endsection

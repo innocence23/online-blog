@@ -5,22 +5,22 @@
             <div class="row">
                 <div class="col-md-4">
                     <h5>关于我们</h5>
-                    <p>{{ $desc }}</p>
+                    <p>{{ $setting['desc'] }}</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>Social Feed</h5>
+                    <h5>找到我们</h5>
                     <div class="social-feed">
                         <div class="feed-line">
-                            <i class="fa fa-weibo"></i>
-                            <p>新浪微博</p>
+                            <i class="fa fa-weixin"></i>
+                            <p>{{ $setting['weixin'] }}</p>
                         </div>
                         <div class="feed-line">
-                            <i class="fa fa-weixin"></i>
-                            <p>微信微信</p>
+                            <i class="fa fa-weibo"></i>
+                            <p><a href="{{ $setting['weibo'] }}" target="_blank">新浪微博</a></p>
                         </div>
                         <div class="feed-line">
                             <i class="fa fa-home"></i>
-                            <p>我的客户端</p>
+                            <p><a href="{{ route('app') }}" target="_blank"> 我的客户端</a></p>
                         </div>
                     </div>
                 </div>

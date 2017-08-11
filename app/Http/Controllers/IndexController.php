@@ -7,12 +7,13 @@ use App\Models\Post;
 use App\Models\SinglePage;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Intervention\Image\Facades\Image;
 
 class IndexController extends Controller
 {
-    public $pageSize = 9;
+    public $pageSize = 12; //由于前端页面的设计  最好为4的倍数
 
     /**
      * 网站首页
@@ -25,6 +26,22 @@ class IndexController extends Controller
     }
 
     /**
+     * 热点页面
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function tops()
+    {
+        $res1 = Redis::zrevrange('post_view', 0, -1);
+        $res = array_map(function ($n){
+           return str_replace('post_', '', $n);
+        }, $res1);
+        $referenceId = implode(',', $res);
+        $blogs = Post::whereIn('id', $res)->orderByRaw(DB::raw("FIELD(id, $referenceId)"))->get();
+        return view('front.top', ['blogs'=>$blogs]);
+    }
+
+    /**
      * 博客列表
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -32,7 +49,17 @@ class IndexController extends Controller
     public function blogs()
     {
         $blogs = Post::where('status', 1)->paginate($this->pageSize);
-        return view('front.blogs', ['blogs'=>$blogs]);
+        $categories = $this->getCategories();
+        return view('front.blogs', ['blogs'=>$blogs, 'categories'=>$categories]);
+    }
+
+    /**
+     * 获取可用的栏目
+     *
+     * @return mixed
+     */
+    private function getCategories(){
+        return Category::where('status', 1)->pluck('name', 'id');
     }
 
     /**
@@ -53,13 +80,19 @@ class IndexController extends Controller
      * 所属栏目博客列表
      *
      * @param $category
+     * @param $flag
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function blogCategory($category)
+    public function blogCategory($category, $flag=null)
     {
         $cateId = Category::where('name', $category)->firstOrFail();
         $blogs = Post::where('cate_id', $cateId['id'])->paginate($this->pageSize);
-        return view('front.blogs', ['blogs'=>$blogs]);
+        if ($flag) {
+            $categories = $this->getCategories();
+            return view('front.blogs', ['blogs'=>$blogs, 'categories'=>$categories]);
+        } else {
+            return view('front.blogs', ['blogs'=>$blogs]);
+        }
     }
 
     /**
@@ -79,7 +112,15 @@ class IndexController extends Controller
             ['cate_id',$blog->cate_id],
             ['id', '!=', $blog->id],
         ])->whereIn('id', $tag_post_ids)->orderBy(\DB::raw('RAND()'))->limit(3)->get();
-        return view('front.blog', ['blog'=>$blog, 'similarPosts'=>$similarPosts]);
+
+        //存访问量
+        Redis::pipeline(function ($pipe) use($blog) {
+            Redis::incr('post_'.$blog->id.'_view');
+            Redis::zincrby('post_view', 1, 'post_'.$blog->id);
+        });
+        $viewcount = Redis::get('post_'.$blog->id.'_view');
+
+        return view('front.blog', ['blog'=>$blog, 'viewcount'=>$viewcount, 'similarPosts'=>$similarPosts]);
     }
 
     /**
@@ -111,18 +152,6 @@ class IndexController extends Controller
     public function productInfo(Request $slug)
     {
         return view('front.product-info');
-    }
-
-    /**
-     * 热点页面
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function tops()
-    {
-        $blogs = Post::all();
-
-        return view('front.top', ['blogs'=>$blogs]);
     }
 
     /**
@@ -207,7 +236,8 @@ class IndexController extends Controller
     public function cooperation()
     {
         $cooperation = SinglePage::where('type', 4)->value('content');
-        return view('front.cooperation', ['cooperation'=>$cooperation]);
+        $setting = Redis::HGETALL('setting');
+        return view('front.cooperation', ['cooperation'=>$cooperation, 'setting'=>$setting]);
     }
 
     /**

@@ -110,6 +110,7 @@
             height: 300,
             allowedContent: true, //解决源码切换的问题
             //filebrowserImageUploadUrl: '{{route("api.image.imageckeditor")}}',
+            filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
             filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
         });
 

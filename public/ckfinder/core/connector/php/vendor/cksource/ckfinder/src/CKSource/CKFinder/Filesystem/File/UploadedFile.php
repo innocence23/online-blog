@@ -62,7 +62,9 @@ class UploadedFile extends File
      */
     public function __construct(UploadedFileBase $uploadedFile, CKFinder $app)
     {
-        parent::__construct($uploadedFile->getClientOriginalName(), $app);
+        //parent::__construct($uploadedFile->getClientOriginalName(), $app);
+        //重新命名上传文件名字
+        parent::__construct(date('YmdHis').'-'.uniqid().'.'.$uploadedFile->getClientOriginalExtension(), $app);
 
         $this->uploadedFile = $uploadedFile;
         $this->workingFolder = $app['working_folder'];

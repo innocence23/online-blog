@@ -108,6 +108,7 @@
                         <div>
                             <ol>
                                 <li>根目录下添加了 helpers.php 文件</li>
+                                <li>更改了ckfinder的源码 支持文件名自定义 E:\myProject\blog\public\ckfinder\core\connector\php\vendor\cksource\ckfinder\src\CKSource\CKFinder\Filesystem\File\UploadedFile.php 67行</li>
                             </ol>
                         </div>
                     </div>

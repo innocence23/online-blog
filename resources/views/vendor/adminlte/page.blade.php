@@ -20,9 +20,6 @@
             border-radius: 3px !important;
             line-height: 32px !important;
         }
-        .sidebar {
-            padding-bottom: 0 !important;
-        }
     </style>
     @stack('css')
     @yield('css')
@@ -153,6 +150,12 @@
         </div>
         <!-- /.content-wrapper -->
 
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.2.3
+            </div>
+            <strong>Copyright © 2012-2018 .</strong> All rights reserved.
+        </footer>
     </div>
     <!-- ./wrapper -->
 @stop

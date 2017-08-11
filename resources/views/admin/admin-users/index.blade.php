@@ -2,12 +2,12 @@
 
 @extends('adminlte::page')
 
-@section('title', '角色管理')
+@section('title', '后台用户管理')
 
 @section('content_header')
-    <h1>角色管理</h1>
+    <h1>后台用户管理</h1>
     <ol class="breadcrumb">
-        <li class="active">角色管理</li>
+        <li class="active">后台用户管理</li>
     </ol>
 @stop
 
@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        角色管理
+                        后台用户管理
                         <button type="button" class="btn btn-info" style="margin: -6px;float: right;" ng-click="toggle('add')">
                             <i class="glyphicon glyphicon-plus"></i> 新建
                         </button>
@@ -29,14 +29,14 @@
                                     <label for="search-name">名称</label>
                                     <input type="text" class="form-control" id="search-name" placeholder="名称" name="search-name">
                                 </div>
-                                {{--<div class="form-group">--}}
-                                {{--<label for="search-status">状态</label>--}}
-                                {{--<select class="form-control" id="search-status" name="search-status">--}}
-                                {{--<option value="">请选择</option>--}}
-                                {{--<option value="0">禁用</option>--}}
-                                {{--<option value="1">启用</option>--}}
-                                {{--</select>--}}
-                                {{--</div>--}}
+                                <div class="form-group">
+                                    <label for="search-status">状态</label>
+                                        <select class="form-control" id="search-status" name="search-status">
+                                        <option value="">请选择</option>
+                                        <option value="0">禁用</option>
+                                        <option value="1">启用</option>
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <button type="button" class="btn btn-primary" ng-click="btnquery()">查询</button>
                                     <input type="reset" class="btn btn-default" />
@@ -61,17 +61,13 @@
                     <div class="modal-body">
                         <form name="myForm" id="form1" novalidate>
                             <div class="form-group" ng-class="{ 'has-error' : !myForm.name.$pristine && myForm.name.$invalid }">
-                                <label for="role-name" class="control-label">名称:</label>
-                                <input type="text" class="form-control" name="name"  id="role-name" required ng-model="role.name">
+                                <label for="role-name" class="control-label">昵称:</label>
+                                <input type="text" class="form-control" name="name"  id="admin-user-name" required ng-model="admin_user.name">
                                 <p ng-show="!myForm.name.$pristine && myForm.name.$invalid" class="help-block">不能为空</p>
                             </div>
                             <div class="form-group">
-                                <label for="role-display_name" class="control-label">角色描述:</label>
-                                <input type="text" class="form-control" name="display_name"  id="role-display_name" ng-model="role.display_name">
-                            </div>
-                            <div class="form-group">
-                                <label for="role-description" class="control-label">其他描述:</label>
-                                <input type="text" class="form-control" name="description"  id="role-description" ng-model="role.description">
+                                <label for="role-display_name" class="control-label">邮箱:</label>
+                                <input type="email" class="form-control" name="email"  id="admin-user-email" ng-model="admin_user.email" />
                             </div>
                         </form>
                     </div>
@@ -92,11 +88,12 @@
 
 @section('js')
     <script>
-
         //bootstraptable 过渡到ng-click函数
         function ngclick(row, index, value) {
-            var m = '<a href="" ng-click="$parent.toggle( \'edit\', ' + index.id + ')" class="btn btn-default">修改</a>';
-            var e = '<button class="btn btn-default" type="button" ng-click="$parent.disableditem(' + row + ',' + index.id + ')">删除</button>';
+            var m = '<a href="" ng-click="$parent.reset( ' + index.id + ')" class="btn btn-default">重置密码</a>';
+            var e = row == 1 ?
+                '<button class="btn btn-default" type="button" ng-click="$parent.disableditem(' + row + ',' + index.id + ')">禁用</button> ' :
+                '<button class="btn btn-default" type="button" ng-click="$parent.disableditem(' + row + ',' + index.id + ')">启用</button> ';
             return e + m;
         }
 
@@ -129,25 +126,36 @@
                         },
                         sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
                         pageNumber: 1,                       //初始化加载第一页，默认第一页
-                        pageSize: '{{$bootstrapLine}}',      //每页的记录行数（*）读取数据库配置
+                        pageSize: '{{$setting['bstable_line_count']}}',      //每页的记录行数（*）读取数据库配置
                         pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
                         clickToSelect: true,                //是否启用点击选中行
                         uniqueId: "id",                     //每一行的唯一标识，一般为主键列
-                        url: "{{route('role.lists')}}",
-
+                        url: "{{route('admin-user.lists')}}",
                         columns: [
                             {
                                 field: 'name',
                                 title: '名称',
                                 valign: 'middle',
                                 sortable: true
-                            },{
-                                field: 'display_name',
-                                title: '角色描述',
+                            }, {
+                                field: 'email',
+                                title: 'Email',
+                                valign: 'middle'
+                            }, {
+                                field: 'status',
+                                title: '状态',
                                 valign: 'middle',
+                                formatter: function (value, row, index) {
+                                    return value == 1 ? '正常' : '<span class="text-warning">禁用</span>';
+                                }
                             }, {
                                 field: 'created_at',
                                 title: '创建时间',
+                                valign: 'middle',
+                                sortable: true
+                            }, {
+                                field: 'updated_at',
+                                title: '更新时间',
                                 valign: 'middle',
                                 sortable: true
                             }, {
@@ -162,7 +170,7 @@
 
                 //搜索按钮事件
                 $scope.btnquery = function () {
-                    $("#table").bootstrapTable('refresh', {url: "{{route('role.lists')}}"});
+                    $("#table").bootstrapTable('refresh', {url: "{{route('admin-user.lists')}}"});
                     //主要解决在不是第一页搜索的情况下 如在第二页搜索搜索不到数据，但其实第一页是有数据的
                 };
 
@@ -180,10 +188,9 @@
                         },
                         function () {
                             $.ajax({
-                                url: '/admin/role/' + id,
+                                url: '/admin/admin-user/' + id,
                                 type: 'POST',
                                 data: {
-                                    _method : 'DELETE',
                                     status: status,
                                     _token: '{{ csrf_token() }}'
                                 },
@@ -199,7 +206,39 @@
                         });
                 };
 
-                //添加和修改按钮ng-click触发函数
+
+                //重置密码按钮事件
+                $scope.reset = function (id) {
+                    swal({
+                            title: "确定要重置密码操作吗？默认密码：邮箱+'@123'",
+                            text: "",
+                            type: "warning",
+                            showCancelButton: true,
+                            cancelButtonText: "取消",
+                            confirmButtonColor: "#337ab7",
+                            confirmButtonText: "确认",
+                            closeOnConfirm: false
+                        },
+                        function () {
+                            $.ajax({
+                                url: '/admin/admin-user-reset/' + id,
+                                type: 'POST',
+                                data: {
+                                    _token: '{{ csrf_token() }}'
+                                },
+                                dataType: 'json',
+                                success: function (data, textStatus, jqXHR) {
+                                    swal("成功!", "", "success");
+                                    $("#table").bootstrapTable('refresh');
+                                },
+                                error: function (xhr, textStatus) {
+                                    swal("错误!", "", "error");
+                                }
+                            })
+                        });
+                };
+
+                //添加按钮ng-click触发函数
                 $scope.toggle = function (modalstate, id) {
                     //避免下次第二次add时候直接输入框是红色警告的
                     $scope.myForm.$setPristine();
@@ -208,16 +247,16 @@
                     switch (modalstate) {
                         case 'add':
                             $scope.form_title = "新建";
-                            $scope.role = {};
+                            $scope.admin_user = {};
                             break;
-                        case 'edit':
+                        /*case 'edit':
                             $scope.form_title = "修改--" + id;
                             $scope.id = id;
-                            $http.get('/admin/role/' + id)
+                            $http.get('/admin/admin-user/' + id)
                                 .then(function successCallback(response) {
-                                    $scope.role = response.data;
+                                    $scope.admin_user = response.data;
                                 });
-                            break;
+                            break;*/
                         default:
                             break;
                     }
@@ -226,8 +265,8 @@
 
                 //添加和修改保存记录
                 $scope.save = function (modalstate, id) {
-                    var url = "{{route('role.store')}}";
-                    var dataparam = $.param($scope.role);
+                    var url = "{{route('admin-user.store')}}";
+                    var dataparam = $.param($scope.admin_user);
                     if (modalstate === 'edit') {
                         url += '/' + id;
                         dataparam += '&_method=put';
@@ -243,7 +282,7 @@
                         if (modalstate === 'edit') { //修改时刷新当前页
                             $("#table").bootstrapTable('refresh');
                         } else { //添加时刷新返回的第一页
-                            $("#table").bootstrapTable('refresh', {url: "{{route('role.lists')}}"});
+                            $("#table").bootstrapTable('refresh', {url: "{{route('admin-user.lists')}}"});
                         }
                     }, function errorCallback(response) {
                         var errorMsg = '';

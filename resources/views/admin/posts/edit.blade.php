@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '文章添加')
+@section('title', '文章修改')
 
 @section('content_header')
     <h1>文章管理</h1>
@@ -106,7 +106,9 @@
             height: 300,
             allowedContent: true, //解决源码切换的问题
             //filebrowserImageUploadUrl: '{{route("api.image.imageckeditor")}}',
-            filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+            filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+            //filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images'
         });
 
         angular.module('myModule', ['localytics.directives'])

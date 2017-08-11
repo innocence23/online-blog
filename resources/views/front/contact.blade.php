@@ -40,7 +40,7 @@
 								<i class="material-icons">add</i>
 							</div>
 							<div class="description">
-								<h4 class="info-title">找到我（们）</h4>
+								<h4 class="info-title">找到我们</h4>
 								<p>{{$position}}</p>
 							</div>
 						</div>
@@ -60,10 +60,10 @@
 							</div>
 							<div class="description">
 								<h4 class="info-title">联系详情</h4>
-								<p>TM-QQ: {{$QQ}}</p>
-								<p>Email: {{$Email}}</p>
+								<p>TMQQ: {{$QQ}}</p>
+								<p>Email:<a href="mailto:{{ str_replace('@', '#', $Email)}}" style="color: #999;">{{$Email}}</a> </p>
 								<p>微信: {{$weixin}}</p>
-								<p>微博: {{$weibo}}</p>
+								<p>微博: <a href="{{$weibo}}" target="_blank" style="color: #999;">@ {{$name}}</a> </p>
 								<p>传真: {{$fax}}</p>
 							</div>
 						</div>
@@ -129,7 +129,6 @@
                     sweetAlert("Oops...", "邮件内容不能为空", "error");
                     return false;
                 }
-
                 $.post("/api/v1/send-email",
 					$("#contact-form").serialize(),
                     function(data){

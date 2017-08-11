@@ -33,9 +33,6 @@ class AppServiceProvider extends ServiceProvider
                 Redis::hmset('setting', Setting::firstOrFail()->toArray());
             }
             $setting = Redis::hgetall('setting');
-            $bootstrapTable = $setting['bstable_line_count'];
-            $copyright = $setting['copyright'];
-            $desc = $setting['desc'];
             //导航链接
             if (!Redis::exists('menu_info')) { //模板只支持两级导航
                 $menu = Menu::where('status', 1)->orderBy('pid')->orderBy('weight', 'desc')
@@ -56,9 +53,7 @@ class AppServiceProvider extends ServiceProvider
             $friend_links = Redis::get('friend_link');
             $friend_links = unserialize($friend_links);
             //页面随机诗文
-            $view->with('bootstrapLine', $bootstrapTable);
-            $view->with('copyright', $copyright);
-            $view->with('desc', $desc);
+            $view->with('setting', $setting);
             $view->with('menu', $menu);
             $view->with('friend_links', $friend_links);
         });

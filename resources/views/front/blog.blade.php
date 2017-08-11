@@ -23,7 +23,9 @@
                 <div class="clearfix entry-meta">
                     <span class="pull-left">
                         <span class="fa fa-calendar" title=" {{ $blog->created_at }}">
-                            <time> <?php echo $blog->created_at->toDateString(); ?>  </time>&nbsp;&nbsp;</span>
+                            <time> <?php echo $blog->created_at->toDateString(); ?>  </time>&nbsp;&nbsp;
+                            <span> 阅：{{$viewcount}}  </span>&nbsp;&nbsp;
+                        </span>
                         <span class="fa fa-folder-open-o">
                             <a href="{{ route('blog.category', $blog->category->name) }}" >
                                 {{ $blog->category->name }}</a>&nbsp;&nbsp;</span>
@@ -167,6 +169,16 @@
         </div>
     </div>
 @endsection
+
+@section('css')
+    <style rel="stylesheet">
+        .media-footer a.btn {
+            margin: 0 12px 2px !important;
+            padding: 0 !important;
+        }
+    </style>
+@endsection
+
 
 @section('js')
     <script src="/vendor/plugins/InlineAttachment-master/dist/inline-attachment.js"></script>

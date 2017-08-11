@@ -27,6 +27,6 @@
     </li>
 </ul>
 <div class="copyright pull-right">
-    {{$copyright}}
+    {{$setting['copyright']}}
 </div>
 <!--     *********   END BIG FOOTER  （简单的footer 注册登陆可以用这个） copyright    *********      -->

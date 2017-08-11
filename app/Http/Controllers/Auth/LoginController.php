@@ -36,6 +36,16 @@ class LoginController extends Controller
     }
 
     /**
+     * 添加状态验证 status
+     * //https://laracasts.com/discuss/channels/laravel/adding-a-condition-to-auth-login?page=1
+     * @param Request $request
+     * @return array
+     */
+    protected function credentials(Request $request) {
+        return array_merge($request->only($this->username(), 'password'), ['status' => 1]);
+    }
+
+    /**
      * 重写前后台退出页面 要不前后台一起退出
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector

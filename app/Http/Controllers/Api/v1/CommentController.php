@@ -24,6 +24,7 @@ class CommentController extends Controller
         $model->parent_id =  $request->input('parent_id', 0);
         $model->post_id = $request->input('post_id', '');
         $model->content = $request->input('content', '');
+        $model->nickname = $request->input('name', '');
         $model->support = 0;
         $model->save();
         return response($model);

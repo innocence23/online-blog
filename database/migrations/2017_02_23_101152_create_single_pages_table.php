@@ -15,8 +15,10 @@ class CreateSinglePagesTable extends Migration
     {
         Schema::create('single_pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type')->unique()->comment('唯一索引 一个类型只能建立一条内容 1 关于我们 2 免责声明 3 网站帮助');
+            $table->integer('type')->comment(' 1=> 免责声明,  2=>网站帮助, 3=>关于我们,  4=>商务合作, 5=>专题');
+            $table->string('name')->default('')->comment('专题名称');
             $table->text('content');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

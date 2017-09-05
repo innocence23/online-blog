@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStatusToUsersTable extends Migration
+class AddAvatarToUser extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,9 @@ class AddStatusToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('status')->default(1);
+            $table->string('oauth_id', 100)->after('password'); //个别google特别长
+            $table->string('oauth', 20)->after('password');
+            $table->string('avatar')->after('password');
         });
     }
 
@@ -26,7 +28,9 @@ class AddStatusToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('status');
+            $table->dropColumn('avatar');
+            $table->dropColumn('oauth');
+            $table->dropColumn('oauth_id');
         });
     }
 }

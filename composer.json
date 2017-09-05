@@ -11,8 +11,12 @@
         "intervention/image": "^2.3",
         "jeroennoten/laravel-adminlte": "^1.19",
         "laravel/framework": "5.4.*",
+        "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "predis/predis": "^1.1",
+        "socialiteproviders/qq": "^3.0",
+        "socialiteproviders/weibo": "^3.0",
+        "socialiteproviders/weixin-web": "^3.0",
         "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {

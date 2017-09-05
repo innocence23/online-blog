@@ -186,6 +186,10 @@ return [
 
         //cors
         Barryvdh\Cors\ServiceProvider::class,
+
+        //Socialite
+        //Laravel\Socialite\SocialiteServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class
     ],
 
     /*
@@ -239,6 +243,8 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         //图片处理
         'Image' => Intervention\Image\Facades\Image::class,
+
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

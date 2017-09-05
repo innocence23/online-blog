@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned();
-            $table->integer('status')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
 
             $table->index('cate_id');

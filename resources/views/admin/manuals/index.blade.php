@@ -18,6 +18,11 @@
                 </div>
                 <div class="panel-body">
                     <div class="container-fluid">
+
+                        <h5>图片添加样式 ： <code>class="img-rounded img-responsive img-raised"</code></h5>
+                        <p></p>
+                        <hr>
+
                         <h4>1、google 字体图标用法地址和文档</h4>
                         <div>
                             <blockquote>

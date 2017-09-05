@@ -4,7 +4,7 @@
 
 @section('main-content')
     <div class="main main-raised">
-        <div class="container">
+        <div class="container blog-post">
             <div class="section section-text">
                 {{--面包屑--}}
                 <div class="main-white">
@@ -35,12 +35,12 @@
                     </span>
                 </div>
                 <hr>
-                <div id="content">
+                <div id="content" class="section-text">
                     {!! $blog->content !!}
                 </div>
             </div>
 
-            <div class="section section-blog-info">
+            <div class="section-blog-info">
                 <div class="blog-tags">
                     <strong>Tags:</strong>
                     @foreach($blog->tags as $tag)

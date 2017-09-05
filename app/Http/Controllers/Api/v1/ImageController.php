@@ -14,6 +14,7 @@ class ImageController extends Controller
         'logo' => [100, 100],
         'article' => [500, 500],
         'default' => [300, 300],
+        'carousel' => [1920, 512],
     ];
 
     //上传文件接口

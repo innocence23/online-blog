@@ -12,19 +12,23 @@
                             <div class="header header-primary text-center">
                                 <h4 class="card-title">登陆</h4>
                                 <div class="social-line">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple" title="微信">
-                                        <i class="fa fa-weixin"></i>
+                                    <a class="btn btn-just-icon btn-simple" target="_blank" href="/login/weixinweb">
+                                        <i class="fa fa-weixin"> </i>
                                     </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple" title="微博">
-                                        <i class="fa fa-weibo"></i>
+                                    <a class="btn btn-just-icon btn-simple" target="_blank" href="/login/weibo">
+                                        <i class="fa fa-weibo"> </i>
                                     </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple" title="QQ">
-                                        <i class="fa fa-qq"></i>
+                                    <a class="btn btn-just-icon btn-simple" target="_blank" href="/login/qq">
+                                        <i class="fa fa-qq"> </i>
                                     </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple" title="google+">
-                                        <i class="fa fa-google-plus"></i>
+                                    <a class="btn btn-just-icon btn-simple" target="_blank" href="/login/google">
+                                        <i class="fa fa-google"> </i>
+                                    </a>
+                                    <a class="btn btn-just-icon btn-simple" target="_blank" href="/login/github">
+                                        <i class="fa fa-github"> </i>
                                     </a>
                                 </div>
+
                             </div>
                             <p class="description text-center">账号登陆</p>
                             <div class="card-content">

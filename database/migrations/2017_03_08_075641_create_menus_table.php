@@ -20,7 +20,7 @@ class CreateMenusTable extends Migration
             $table->string('name')->default('')->comment('菜单名称');
             $table->string('icon')->default('')->comment('material-icons图标');
             $table->tinyInteger('weight')->default(0)->comment('排序');
-            $table->integer('status')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

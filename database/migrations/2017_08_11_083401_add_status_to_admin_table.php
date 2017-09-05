@@ -14,7 +14,7 @@ class AddStatusToAdminTable extends Migration
     public function up()
     {
         Schema::table('admins', function (Blueprint $table) {
-            $table->tinyInteger('status')->nullable()->default(1);
+            $table->tinyInteger('status')->default(1);
         });
     }
 

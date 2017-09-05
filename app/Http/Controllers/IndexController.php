@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carousel;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\SinglePage;
@@ -22,7 +23,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('front.index');
+        $carousels = Carousel::where('status', 1)->get();
+        return view('front.index', ['carousels'=>$carousels]);
     }
 
     /**
@@ -59,7 +61,7 @@ class IndexController extends Controller
      * @return mixed
      */
     private function getCategories(){
-        return Category::where('status', 1)->pluck('name', 'id');
+        return Category::where('status', 1)->where('pid', '!=', 0)->pluck('name', 'id');
     }
 
     /**
@@ -249,6 +251,28 @@ class IndexController extends Controller
     {
         $help = SinglePage::where('type', 2)->value('content');
         return view('front.help', ['help'=>$help]);
+    }
+
+    /**
+     * 专题
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function zhuanti()
+    {
+        $zhuantis = SinglePage::where(['type'=>5, 'status'=>1])->paginate($this->pageSize);
+        return view('front.zhuanti', ['zhuantis'=>$zhuantis]);
+    }
+
+    /**
+     * 专题
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function zhuantiInfo()
+    {
+        $zhuanti = SinglePage::where('type', 5)->value('content');
+        return view('front.zhuanti-info', ['zhuanti'=>$zhuanti]);
     }
 
     /**

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>fullPage.js — 项目导航演示</title>
+    <title>APP | 自得其乐</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
@@ -600,7 +600,6 @@
                         </div>
                     </a>
                     <div class="content">
-
                         <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank">
                             <h4 class="card-title">Light Bootstrap Dashboard</h4>
                         </a>
@@ -660,7 +659,6 @@
                         <p class="card-description">
                             Don't be scared of the truth because we need to restart the human foundation in truth.
                         </p>
-
                     </div>
                 </div>
             </div>
@@ -692,7 +690,6 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
                 <h2 class="title">What Clients Say</h2>
-
             </div>
         </div>
 
@@ -708,8 +705,7 @@
                     <div class="content">
                         <h4 class="card-title">Mike Andrew</h4>
                         <h6 class="category text-muted">CEO @ Marketing Digital Ltd.</h6>
-                        <h5 class="card-description">"I speak yell scream directly at the old guard on behalf of the future. I gotta say at that time I’d like to meet Kanye I speak yell scream directly at the old guard on behalf of the future."
-                        </h5>
+                        <h5 class="card-description">"I speak yell scream directly at the old guard on behalf </h5>
                     </div>
                 </div>
             </div>
@@ -725,8 +721,7 @@
                     <div class="content">
                         <h4 class="card-title">Tina Thompson</h4>
                         <h6 class="category text-muted">Marketing @ Apple Inc.</h6>
-                        <h5 class="card-description">"I promise I will never let the people down. I want a better life for all!!! Pablo Pablo Pablo Pablo! Thank you Anna for the invite thank you to the whole Vogue team It wasn’t any Kanyes I love Rick Owens’ bed design but the back is too high for the beams and angle of the ceiling"
-                        </h5>
+                        <h5 class="card-description">"I promise I will never let the pe</h5>
                     </div>
                 </div>
             </div>
@@ -742,17 +737,12 @@
                     <div class="content">
                         <h4 class="card-title">Gina West</h4>
                         <h6 class="category text-muted">CFO @ Apple Inc.</h6>
-                        <h5 class="card-description">"I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound... Royère doesn't make a Polar bear bed but the Polar bear. This is a very nice testimonial about this company."
-                        </h5>
-
+                        <h5 class="card-description">"I've been trying to figure out the bed design for the </h5>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 </div>
-
 </body>
 </html>

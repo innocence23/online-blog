@@ -75,7 +75,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
         ['index', 'store']
     ]);
 
-
     //角色
     Route::get('role/lists', 'RoleController@getLists')->name('role.lists');
     Route::resource('role', 'RoleController');
@@ -105,8 +104,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
         ['index', 'store', 'edit', 'update', 'show']
     ]);
 
+    //友情链接
+    Route::get('carousel/lists', 'CarouselController@getLists')->name('carousel.lists');
+    Route::post('carousel/{carousel}', 'CarouselController@disable')->name('carousel.disable');
+    Route::resource('carousel', 'CarouselController', ['only' =>
+        ['index', 'store', 'edit', 'update', 'show']
+    ]);
+
     //单页 专题
     Route::get('single-page/lists', 'SinglePageController@getLists')->name('single-page.lists');
+    Route::post('single-page/{single_page}', 'SinglePageController@disable')->name('single-page.disable');
     Route::resource('single-page', 'SinglePageController', ['only' =>
         ['index', 'store', 'edit', 'update', 'show']
     ]);
@@ -131,12 +138,17 @@ Route::group([], function () {
     Route::get('signup', 'IndexController@signup')->name('signup');
     Route::get('login', 'IndexController@login')->name('login');
 
+    Route::get('login/{type}', 'Auth\LoginController@redirectToProvider');
+    Route::get('login/{type}/callback', 'Auth\LoginController@handleProviderCallback');
+
     Route::get('contact', 'IndexController@contact')->name('contact');
     Route::get('about', 'IndexController@about')->name('about');
 
     Route::get('item', 'IndexController@item')->name('item');
     Route::get('cooperation', 'IndexController@cooperation')->name('cooperation');
     Route::get('help', 'IndexController@help')->name('help');
+    Route::get('single', 'IndexController@zhuanti')->name('zhuanti');
+    Route::get('single/{single_page}', 'IndexController@zhuantiInfo')->name('zhuanti-info');
 
     Route::get('search', 'IndexController@search')->name('search');
 

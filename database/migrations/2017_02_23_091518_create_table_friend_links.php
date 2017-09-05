@@ -19,9 +19,9 @@ class CreateTableFriendLinks extends Migration
             $table->string('url')->unique()->comment('url唯一标记');
             $table->string('pic');
             $table->string('desc');
-            $table->integer('weight')->default(0);
+            $table->tinyInteger('weight')->default(0);
             $table->string('info')->default('');
-            $table->integer('status')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

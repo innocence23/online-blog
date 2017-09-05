@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Models\Carousel;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -37,4 +38,15 @@ class AppController extends Controller
         $blog->content = str_replace('src="/', "src=\"{$this->url}", $blog->content);
         return $blog;
     }
+
+    public function carousels(Request $request)
+    {
+        $carousels = Carousel::select('id', 'pic', 'name', 'desc', 'url')->where('status', 1)->get();
+        foreach ($carousels as $k=>$v) {
+            $carousels[$k]->pic = $this->imgPrefix . $v->pic;
+        }
+        return $carousels;
+    }
+
+
 }

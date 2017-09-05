@@ -11,22 +11,26 @@
 					<div class="row">
 						<div class="col-md-10 col-md-offset-1">
 							<div class="social text-center">
-								<button class="btn btn-just-icon btn-round btn-linkedin">
+								<a class="btn btn-just-icon btn-round btn-facebook" target="_blank" href="/login/weixinweb">
 									<i class="fa fa-weixin"> </i>
 									<div class="ripple-container"></div>
-								</button>
-								<button class="btn btn-just-icon btn-round btn-youtube">
+								</a>
+								<a class="btn btn-just-icon btn-round btn-youtube" target="_blank" href="/login/weibo">
 									<i class="fa fa-weibo"> </i>
 									<div class="ripple-container"></div>
-								</button>
-								<button class="btn btn-just-icon btn-round btn-twitter">
+								</a>
+								<a class="btn btn-just-icon btn-round btn-linkedin" target="_blank" href="/login/qq">
 									<i class="fa fa-qq"> </i>
 									<div class="ripple-container"></div>
-								</button>
-								<button class="btn btn-just-icon btn-round btn-google">
+								</a>
+								<a class="btn btn-just-icon btn-round btn-google" target="_blank" href="/login/google">
 									<i class="fa fa-google"> </i>
 									<div class="ripple-container"></div>
-								</button>
+								</a>
+								<a class="btn btn-just-icon btn-round btn-github" target="_blank" href="/login/github">
+									<i class="fa fa-github"> </i>
+									<div class="ripple-container"></div>
+								</a>
 								<h4> 传统注册 </h4>
 							</div>
 

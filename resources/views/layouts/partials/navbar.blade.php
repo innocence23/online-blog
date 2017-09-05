@@ -52,7 +52,8 @@
                     <li class="dropdown">
                         <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown">
                             <div class="profile-photo-small">
-                                <img src="/assets/img/faces/avatar.jpg" alt="{{ Auth::user()->name }}" class="img-circle img-responsive">
+                                <img src="{{ Auth::user()->avatar ?: '/assets/img/faces/avatar.jpg'}}"
+                                     title="{{ Auth::user()->name }}" class="img-circle img-responsive">
                             </div>
                         </a>
                         <ul class="dropdown-menu">

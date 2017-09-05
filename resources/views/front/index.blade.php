@@ -10,30 +10,20 @@
                 <div class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        @foreach($carousels as $k=>$v)
+                            <li data-target="#carousel-example-generic" data-slide-to=" {{ $k}}" class=" {{ $k==0 ? 'active' : '' }}"></li>
+                        @endforeach
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="item">
-                            <img src="/assets/img/faces/bg2.jpg" alt="Awesome Image">
-                            <div class="carousel-caption">
-                                <h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
+                        @foreach($carousels as $k=>$carousel)
+                            <div class="item {{ $k==0 ? 'active' : '' }}">
+                                <img src="uploads/{{ $carousel->pic }}" alt="Awesome Image">
+                                <div class="carousel-caption">
+                                    <h4><i class="material-icons">location_on</i>{{ $carousel->desc }}</h4>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item active">
-                            <img src="/assets/img/faces/bg3.jpg" alt="Awesome Image">
-                            <div class="carousel-caption">
-                                <h4><i class="material-icons">location_on</i> Somewhere Beyond, United States</h4>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="/assets/img/faces/bg.jpg" alt="Awesome Image">
-                            <div class="carousel-caption">
-                                <h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

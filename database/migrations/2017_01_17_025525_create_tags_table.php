@@ -18,7 +18,7 @@ class CreateTagsTable extends Migration
             $table->string('name')->unique();
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned();
-            $table->integer('status')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

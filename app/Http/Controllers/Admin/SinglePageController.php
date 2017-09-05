@@ -72,13 +72,22 @@ class SinglePageController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'type' => 'required|numeric|unique:single_pages,type',
-            'content' => 'required'
-        ]);
-
+        if ( $request->input('type', '') == 5) { //专题可以建多篇
+            $this->validate($request, [
+                'type' => 'required|numeric',
+                'name' => 'required',
+                'content' => 'required',
+            ]);
+        } else {
+            $this->validate($request, [
+                'type' => 'required|numeric|unique:single_pages,type',
+                'name' => 'required',
+                'content' => 'required',
+            ]);
+        }
         $model = new SinglePage();
         $model->type = $request->input('type', '');
+        $model->name = $request->input('name', '');
         $model->content = $request->input('content', '');
         $model->save();
         return response($model);
@@ -104,14 +113,41 @@ class SinglePageController extends Controller
      */
     public function update(Request $request, SinglePage $single_page)
     {
-        $this->validate($request, [
-            'type' => 'required|numeric|unique:single_pages,type,'.$single_page->id,
-            'content' => 'required'
-        ]);
+        if ( $request->input('type', '') == 5) { //专题可以建多篇
+            $this->validate($request, [
+                'type' => 'required|numeric',
+                'name' => 'required',
+                'content' => 'required'
+
+            ]);
+        } else {
+            $this->validate($request, [
+                'type' => 'required|numeric|unique:single_pages,type,'.$single_page->id,
+                'name' => 'required',
+                'content' => 'required'
+            ]);
+        }
         $model = $single_page;
         $model->type = $request->input('type', '');
+        $model->name = $request->input('name', '');
         $model->content = $request->input('content', '');
         $model->save();
         return response($model);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  SinglePage $single_page
+     * @return \Illuminate\Http\Response
+     */
+    public function disable(Request $request, SinglePage $single_page)
+    {
+        $model = $single_page;
+        $status = $request->input('status', 0) ;
+        $model->status = $status ? 0 : 1 ;
+        $model->save();
+        return response()->json(['errorCode' => '0', 'errorMsg' => 'success']);
     }
 }

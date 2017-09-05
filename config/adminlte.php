@@ -178,6 +178,11 @@ return [
             'url'  => '/admin/single-page/',
             'icon' => 'flag',
         ],
+        [
+            'text' => '首页轮播图管理',
+            'url'  => '/admin/carousel/',
+            'icon' => 'leaf',
+        ],
         '帮助中心',
         [
             'text' => '帮助中心',

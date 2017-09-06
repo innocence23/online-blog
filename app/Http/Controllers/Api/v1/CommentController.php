@@ -36,8 +36,11 @@ class CommentController extends Controller
      */
     public function ListComments($post_id)
     {
-        $model = Comment::where(['post_id'=>$post_id, 'status'=>1])->orderBy('created_at', 'desc')
-            ->get(['id', 'nickname', 'uid', 'parent_id', 'post_id', 'support', 'content', 'created_at'])->keyBy('id');
+        $model = Comment::leftJoin('users', 'comments.uid', '=', 'users.id')
+            ->where(['post_id'=>$post_id, 'comments.status'=>1])
+            ->orderBy('comments.created_at', 'desc')
+            ->get(['comments.id', 'comments.nickname', 'comments.uid', 'name', 'avatar', 'parent_id',
+                'post_id', 'support', 'content', 'comments.created_at']);
         echo tree($model);
     }
 }
@@ -52,19 +55,21 @@ function tree($arr, $pid=0){
             preg_match($preg, $content ,$result);
             if($result) {
                 $content =  preg_replace($preg,
-                    '<a href="/uploads/'.$result[1].'" data-fancybox><img src="/uploads/'.$result[1].'" style="max-height: 140px"
- width="40%" height="40%"/></a>',
+                    '<a href="/uploads/'.$result[1].'" data-fancybox>
+                    <img src="/uploads/'.$result[1].'" style="max-height: 140px" width="40%" height="40%"/></a>',
                     $content);
             }
+            $avatar = $v->avatar ?: '/assets/placeholder.jpg';
+            $nickname = $v->nickname ?: $v->name;
             $str .=  <<<EOF
 <div class="media">
 <a class="pull-left" href="#pablo">
 <div class="avatar">
-<img class="media-object" src="/assets/placeholder.jpg" alt="avatar"/>
+<img class="media-object" src="{$avatar}" alt="avatar"/>
 </div>
 </a>
 <div class="media-body">
-<h4 class="media-heading">{$v->nickname}
+<h4 class="media-heading">{$nickname}
 <small> {$v->created_at}</small>
 </h4>
 <p>{$content}</p>

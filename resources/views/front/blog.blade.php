@@ -52,7 +52,7 @@
             <div class="section section-comments">
                 <div class="media-area">
                     <a name="maodian-comments" id="maodian-comments"></a>
-                    <h3 class="title text-center"> {{ $blog->comments()->count() }} 条评论</h3>
+                    <h3 class="title text-center"> <span id="ccount">{{ $blog->comments()->count() }}</span> 条评论</h3>
                     <div id="comments"></div>
                 </div>
                 <h5 class="text-center comment_markup">登陆后 发表评论</h5>
@@ -86,18 +86,16 @@
                                     <textarea class="form-control" required name="content" placeholder="写下你想说的话" rows="3"></textarea>
                                 </div>
                                 <div class="submit media-footer">
-                                    <button class="btn btn-just-icon btn-round btn-google">
-                                        <i class="fa fa-google"></i>
-                                        <div class="ripple-container"></div>
-                                    </button>
-                                    <button class="btn btn-just-icon btn-round btn-facebook">
-                                        <i class="fa fa-facebook"></i>
-                                        <div class="ripple-container"></div>
-                                    </button>
-                                    <button class="btn btn-just-icon btn-round btn-linkedin">
-                                        <i class="fa fa-linkedin"></i>
-                                        <div class="ripple-container"></div>
-                                    </button>
+                                    <a target="_blank" href="/login/google">
+                                        <span class="btn btn-just-icon btn-round btn-google" >
+                                            <i class="fa fa-google"></i>
+                                        </span>
+                                    </a>
+                                    <a target="_blank" href="/login/github">
+                                        <span class="btn btn-just-icon btn-round btn-github" >
+                                            <i class="fa fa-github"></i>
+                                        </span>
+                                    </a>
                                     <input type="button" class="btn btn-primary btn-round btn-wd pull-right" value="确定" id="submit-comment" />
                                     <input type="button" style="display: none" class="btn btn-round btn-wd pull-right"
                                            value="取消回复" id="cancel-comment"/>
@@ -113,7 +111,7 @@
                         </div>
                         <a class="pull-left author" href="#pablo">
                             <div class="avatar">
-                                <img class="media-object" alt="64x64" src="{{ asset('/assets/placeholder.jpg') }}">
+                                <img class="media-object" alt="64x64" src="{{ \Auth::user()->avatar ?: asset('/assets/placeholder.jpg') }}">
                             </div>
                         </a>
                         <div class="media-body">
@@ -179,7 +177,6 @@
     </style>
 @endsection
 
-
 @section('js')
     <script src="/vendor/plugins/InlineAttachment-master/dist/inline-attachment.js"></script>
     <script src="/vendor/plugins/InlineAttachment-master/dist/jquery.inline-attachment.js"></script>
@@ -199,6 +196,7 @@
                         $('.comment_markup').after($('#comment_textarea'));
                         $('#comment-form textarea').val('');
                         $('#cancel-comment').hide();
+                        $('#ccount').html(parseInt($('#ccount').html())+1);
                         getComments();
                     });
             });

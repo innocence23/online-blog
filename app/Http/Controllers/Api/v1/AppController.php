@@ -73,8 +73,7 @@ function randrgb()
     $str='0123456789ABCDEF';
     $estr='#';
     $len=strlen($str);
-    for($i=1;$i<=6;$i++)
-    {
+    for($i=1;$i<=6;$i++) {
         $num=rand(0,$len-1);
         $estr=$estr.$str[$num];
     }

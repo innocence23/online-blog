@@ -39,5 +39,7 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'v1'], function () {
         Route::get('article/{id}', 'AppController@articleInfo')->name('api.app.article.info');
 
         Route::get('carousels', 'AppController@carousels')->name('api.app.carousels');
+        Route::get('about', 'AppController@about')->name('api.app.about');
+        Route::get('categories', 'AppController@categories')->name('api.app.categories');
     });
 });

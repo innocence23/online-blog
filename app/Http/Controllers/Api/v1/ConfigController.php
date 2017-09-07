@@ -8,16 +8,25 @@ use Illuminate\Support\Facades\Mail;
 
 class ConfigController extends Controller
 {
-
     private $email = '654037450@qq.com';
+    private $email163 = 'zyf880916@163.com';
     public function sendEmail(Request $request){
-        $data = $request->only('name', 'email', 'phone');
-        $data['messageLines'] = explode("\n", $request->get('message'));
+        $data = $request->only('name', 'email', 'phone', 'subject');
+        if ($request->get('message')) {
+            $data['messageLines'] = explode("\n", $request->get('message'));
+        } else {
+            $data['messageLines'] = [];
+        }
 
-        Mail::send('email', $data, function ($message) use ($data) {
-            $message->subject('Blog Contact Form: '.$data['name'])
+        if($data['subject']){
+            $subject = '自得其乐主题： '.$data['subject'];
+        } else {
+            $subject = '联系我们发来的信息，相关人员名字： '.$data['name'];
+        }
+        Mail::send('email', $data, function ($message) use ($data, $subject) {
+            $message->subject($subject)
                 ->to($this->email)
-                ->bcc($this->email)
+                ->bcc($this->email163)
                 ->replyTo($data['email']);
         });
     }

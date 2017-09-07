@@ -14,9 +14,9 @@ class AddAvatarToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('oauth_id', 100)->after('password'); //个别google特别长
-            $table->string('oauth', 20)->after('password');
-            $table->string('avatar')->after('password');
+            $table->string('oauth_id', 100)->default('')->after('password'); //个别google特别长
+            $table->string('oauth', 20)->default('')->after('password');
+            $table->string('avatar')->default('')->after('password');
         });
     }
 

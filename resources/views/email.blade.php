@@ -1,16 +1,26 @@
 <p>
-    You have received a new message from your website contact form.</p><p>
-    Here are the details:
+    联系人的详细信息：
 </p>
 <ul>
-    <li>Name: <strong>{{ $name }}</strong></li>
-    <li>Email: <strong>{{ $email }}</strong></li>
-    <li>Phone: <strong>{{ $phone }}</strong></li>
+    @if($name)
+        <li>名字: <strong>{{ $name }}</strong></li>
+    @endif
+    @if($email)
+        <li>邮箱: <strong>{{ $email }}</strong></li>
+    @endif
+    @if($phone)
+        <li>手机: <strong>{{ $phone }}</strong></li>
+    @endif
+    @if($subject)
+        <li>主题: <strong>{{ $subject }}</strong></li>
+    @endif
 </ul>
 <hr>
 <p>
-    @foreach ($messageLines as $messageLine)
-        {{ $messageLine }}<br>
-    @endforeach
+    @if($messageLines)
+        @foreach ($messageLines as $messageLine)
+            {{ $messageLine }}<br>
+        @endforeach
+    @endif
 </p>
 <hr>

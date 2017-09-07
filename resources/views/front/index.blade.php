@@ -134,134 +134,6 @@
         </div>
     </div>
 
-    <div class="cd-section" id="teams">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 class="title">The Executive Team 3</h2>
-                    <h5 class="description">This is the paragraph where you can write more details about your team. Keep you user engaged by
-                        providing meaningful information.</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card card-profile card-plain">
-                        <div class="col-md-5">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}"/>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="content">
-                                <h4 class="card-title">Alec Thompson</h4>
-                                <h6 class="category text-muted">Founder</h6>
-
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth...
-                                </p>
-
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-facebook"><i class="fa fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fa fa-google"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card card-profile card-plain">
-                        <div class="col-md-5">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}"/>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="content">
-                                <h4 class="card-title">Kendall Andrew</h4>
-                                <h6 class="category text-muted">Graphic Designer</h6>
-
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth...
-                                </p>
-
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-linkedin"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-facebook"><i class="fa fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fa fa-google"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card card-profile card-plain">
-                        <div class="col-md-5">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}"/>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="content">
-                                <h4 class="card-title">Gina Andrew</h4>
-                                <h6 class="category text-muted">Web Designer</h6>
-
-                                <p class="card-description">
-                                    I love you like Kanye loves Kanye. Don't be scared of the truth.
-                                </p>
-
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-youtube"><i class="fa fa-youtube-play"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-instagram"><i class="fa fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card card-profile card-plain">
-                        <div class="col-md-5">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}"/>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="content">
-                                <h4 class="card-title">George West</h4>
-                                <h6 class="category text-muted">Backend Hacker</h6>
-
-                                <p class="card-description">
-                                    I love you like Kanye loves Kanye. Don't be scared of the truth because we need to restart the human
-                                    foundation.
-                                </p>
-
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-linkedin"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-facebook"><i class="fa fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fa fa-google"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
     <div class="cd-section" id="projects">
         <div class="container">
             <div class="row">
@@ -340,7 +212,7 @@
     </div>
 
     <div class="cd-section" id="testimonials">
-        <div class="testimonials-1 section-image" style="background-image: url('{{ asset('/assets/img/faces/avatar.jpg') }}')">
+        <div class="testimonials-1 section-image" style="background-image: url('uploads/{{ $carousels[0]->pic}}')">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
@@ -428,6 +300,59 @@
             </div>
         </div>
     </div>
+
+
+    <div class="subscribe-line subscribe-line-image" data-parallax="true" style="background-color: #868686">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="text-center">
+                        <h3 class="title">联系我们</h3>
+                        <p class="description">
+                            留下你的邮箱和需求，我们会尽快联系你的.
+                        </p>
+                    </div>
+
+                    <div class="card card-raised card-form-horizontal">
+                        <div class="card-content">
+                            <form role="form" id="contact-form" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <div class="row">
+                                    <div class="col-sm-4">
+
+                                        <div class="input-group">
+											<span class="input-group-addon">
+                                                <i class="material-icons">color_lens</i>
+											</span>
+                                            <div class="form-group is-empty">
+                                                <input type="text" name="subject" placeholder="主题" class="form-control" id="subject">
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+											<span class="input-group-addon">
+												<i class="material-icons">mail</i>
+											</span>
+                                            <div class="form-group is-empty">
+                                                <input type="email" id="email" name="email" placeholder="邮箱" class="form-control">
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <button type="button" class="btn btn-rose btn-block" id="send">联系我们</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('css')
@@ -439,4 +364,30 @@
             height: 500px !important;
         }
     </style>
+@endsection
+
+@section('js')
+    <script>
+        $(function(){
+            $('#send').click(function(){
+                //验证邮箱
+                var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                if(!myreg.test($('#email').val())) {
+                    sweetAlert("Oops...", "请输入有效的E_mail", "error");
+                    return false;
+                }
+                if ("" == $('#subject').val()) {
+                    sweetAlert("Oops...", "主题不能为空", "error");
+                    return false;
+                }
+
+                $.post("/api/v1/send-email",
+                    $("#contact-form").serialize(),
+                    function(data){
+                        swal("Good job!", "邮件发送成功，我们会尽快联系你", "success")
+                    }
+                );
+            });
+        })
+    </script>
 @endsection

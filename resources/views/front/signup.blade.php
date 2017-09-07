@@ -85,13 +85,13 @@
 									<!-- If you want to add a checkbox to this form, uncomment this code -->
 									<div class="checkbox">
 										<label>
-											<input type="checkbox" name="optionsCheckboxes" checked>
+											<input type="checkbox" name="optionsCheckboxes" checked id="cop">
 											阅读并同意 <a href="{{route('item')}}" target="_blank">用户注册协议和条款</a>.
 										</label>
 									</div>
 								</div>
 								<div class="footer text-center">
-									<button type="submit" class="btn btn-primary">注册</button>
+									<button type="submit" class="btn btn-primary" id="reg" >注册</button>
 								</div>
 								<div style="margin: 2px 15px;" >
 									已有帐号？<a href="{{ url('login') }}">立即登陆</a>
@@ -103,4 +103,18 @@
 			</div>
 		</div>
 	</div>
+@endsection
+
+@section('js')
+	<script>
+        $(function(){
+            $('#cop').click(function () {
+				if(!$(this).is(':checked')){
+                    $('#reg').attr('disabled', 'disabled');
+				} else {
+                    $('#reg').removeAttr('disabled');
+				}
+            });
+        })
+	</script>
 @endsection

@@ -122,7 +122,7 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 col-md-offset-1 col-lg-offset-1 col-sm-offset-1">
             <div class="info info-horizontal">
                 <div class="icon icon-primary">
                     <i class="material-icons">dashboard</i>

@@ -299,7 +299,7 @@
                     <div class="card card-plain">
                         <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank">
                             <div class="card-image">
-                                <img src="http://s3.amazonaws.com/creativetim_bucket/products/34/original/opt_lbd_pro_new_thumbnail.jpg?1449352503"/>
+                                <img src="http://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg?1458052306"/>
                             </div>
                         </a>
                         <div class="content">
@@ -320,7 +320,7 @@
                     <div class="card card-plain">
                         <a href="http://www.creative-tim.com/product/get-shit-done-pro" target="_blank">
                             <div class="card-image">
-                                <img src="http://s3.amazonaws.com/creativetim_bucket/products/26/original/opt_gsdk_new_thumbnail.jpg"/>
+                                <img src="http://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg?1458052306"/>
                             </div>
                         </a>
                         <div class="content">

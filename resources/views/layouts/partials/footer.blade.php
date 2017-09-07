@@ -11,15 +11,15 @@
                     <h5>找到我们</h5>
                     <div class="social-feed">
                         <div class="feed-line">
-                            <i class="fa fa-weixin"></i>
-                            <p>{{ $setting['weixin'] }}</p>
+                            <i class="fa fa-weixin" style="width: 32px"></i>
+                            <p><a>{{ $setting['weixin'] }}</a></p>
                         </div>
                         <div class="feed-line">
-                            <i class="fa fa-weibo"></i>
+                            <i class="fa fa-weibo" style="width: 32px"></i>
                             <p><a href="{{ $setting['weibo'] }}" target="_blank">新浪微博</a></p>
                         </div>
                         <div class="feed-line">
-                            <i class="fa fa-home"></i>
+                            <i class="fa fa-home" style="width: 32px"></i>
                             <p><a href="{{ route('app') }}" target="_blank"> 我的客户端</a></p>
                         </div>
                     </div>

@@ -211,6 +211,9 @@
         </div>
     </div>
 
+    <a href="javascript:scroll(0,0)" class="button">返回顶部</a>
+
+
     <div class="cd-section" id="testimonials">
         <div class="testimonials-1 section-image" style="background-image: url('uploads/{{ $carousels[0]->pic}}')">
             <div class="container">

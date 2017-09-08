@@ -8,4 +8,10 @@
 <script src="{{ asset('/vendor/plugins/sweetalert/dist/sweetalert.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/vendor/plugins/fancybox-3.0/dist/jquery.fancybox.min.js') }}" type="text/javascript"></script>
 
+<script>
+    $(function () {
+        $('.scroll-top').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
+        $('.scroll-bottom').click(function(){$('html,body').animate({scrollTop:$('.copyright').offset().top}, 800);});
+    })
+</script>
 @yield('js')

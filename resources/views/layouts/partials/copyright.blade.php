@@ -1,3 +1,12 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal"  style="background: rgba(0,0,0,0.83);"
+     tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="margin-top: 200px;">
+         <input type="text" name="search" placeholder="搜索最懂你"
+                style="width: 100%; height: 50px; line-height: 100%; padding: 20px; border-radius: 5px;">
+    </div>
+</div>
+
 <!--     *********   BIG FOOTER （简单的footer 注册登陆可以用这个） copyright   *********      -->
 <ul class="pull-left">
     <li>

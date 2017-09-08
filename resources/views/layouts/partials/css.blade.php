@@ -20,4 +20,26 @@
 <link rel="stylesheet" href="{{ asset('/vendor/plugins/fancybox-3.0/dist/jquery.fancybox.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('/vendor/plugins/sweetalert/dist/sweetalert.css') }}" />
 
+<style type="text/css">
+    #fix-controls {
+        position: fixed;
+        top: 50%;
+        margin-top: -60px;
+        right: 20px;
+        width: 50px;
+        z-index: 9996;
+        background: #f6f6f6;
+        border: 1px solid #ddd;
+        font-size: 2rem;
+    }
+    .scroll-to {
+        position: relative;
+        display: block;
+        color: #444;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ececec;
+    }
+</style>
+
 @yield('css')

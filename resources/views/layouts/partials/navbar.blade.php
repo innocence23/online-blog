@@ -6,7 +6,8 @@
     }
 </style>
 
-<nav class="navbar navbar-inverse" style="z-index: 9999; padding:2px 0">
+<nav class="navbar navbar-inverse" style="z-index: 9999; padding:2px 0;
+border-top-left-radius: 0; border-top-right-radius: 0px;">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse">
@@ -74,7 +75,9 @@
                 <!-- Button trigger modal -->
 
                 <li>
-                    <a data-toggle="modal" data-target="#exampleModal" title="搜索" style="cursor:pointer">
+                    <a data-toggle="modal" data-target="#exampleModal"
+                       class="navbar-toggle toggled" data-toggle="collapse"
+                       title="搜索" style="cursor:pointer; margin-top: 0px; float: none;">
                         <i class="material-icons">search</i>
                     </a>
                 </li>
@@ -84,10 +87,10 @@
 </nav>
 {{--顶部底部代码--}}
 <div id="fix-controls">
-    <a class="scroll-to scroll-top" href="javascript:" data-placement="left" data-toggle="tooltip" title="返回顶部">
+    <a class="scroll-to scroll-top" href="javascript:" data-placement="left" title="返回顶部">
         <i class="material-icons">vertical_align_top</i>
     </a>
-    <a class="scroll-to scroll-bottom" href="javascript:" data-placement="left" data-toggle="tooltip" title="返回底部">
+    <a class="scroll-to scroll-bottom" href="javascript:" data-placement="left" title="返回底部">
         <i class="material-icons">vertical_align_bottom</i>
     </a>
 </div>

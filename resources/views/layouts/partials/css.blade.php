@@ -23,11 +23,11 @@
 <style type="text/css">
     #fix-controls {
         position: fixed;
-        top: 50%;
+        bottom: 5%;
         margin-top: -60px;
-        right: 20px;
-        width: 50px;
-        z-index: 9996;
+        right: 9px;
+        width: 38px;
+        z-index: 6;
         background: #f6f6f6;
         border: 1px solid #ddd;
         font-size: 2rem;
@@ -37,7 +37,7 @@
         display: block;
         color: #444;
         text-align: center;
-        padding: 10px 0;
+        padding: 6px 0;
         border-bottom: 1px solid #ececec;
     }
 </style>

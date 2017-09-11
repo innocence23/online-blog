@@ -2,6 +2,9 @@
     联系人的详细信息：
 </p>
 <ul>
+    @if($subject)
+        <li>主题: <strong>{{ $subject }}</strong></li>
+    @endif
     @if($name)
         <li>名字: <strong>{{ $name }}</strong></li>
     @endif
@@ -10,9 +13,6 @@
     @endif
     @if($phone)
         <li>手机: <strong>{{ $phone }}</strong></li>
-    @endif
-    @if($subject)
-        <li>主题: <strong>{{ $subject }}</strong></li>
     @endif
 </ul>
 <hr>

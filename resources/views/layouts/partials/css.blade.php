@@ -1,7 +1,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-<title>@yield('html_title') | 字得其乐</title>
+<title>@yield('html_title') | 自得其乐</title>
 
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
 
@@ -19,27 +19,5 @@
 
 <link rel="stylesheet" href="{{ asset('/vendor/plugins/fancybox-3.0/dist/jquery.fancybox.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('/vendor/plugins/sweetalert/dist/sweetalert.css') }}" />
-
-<style type="text/css">
-    #fix-controls {
-        position: fixed;
-        bottom: 5%;
-        margin-top: -60px;
-        right: 9px;
-        width: 38px;
-        z-index: 6;
-        background: #f6f6f6;
-        border: 1px solid #ddd;
-        font-size: 2rem;
-    }
-    .scroll-to {
-        position: relative;
-        display: block;
-        color: #444;
-        text-align: center;
-        padding: 6px 0;
-        border-bottom: 1px solid #ececec;
-    }
-</style>
 
 @yield('css')

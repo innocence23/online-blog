@@ -18,6 +18,5 @@
 <!--   Core JS Files   -->
 @include('layouts.partials.js')
 
-
 </body>
 </html>

@@ -1,13 +1,7 @@
 {{--<nav class="navbar navbar-inverse filter-bar navbar-fixed-top">--}}
 {{--<nav class="navbar navbar-inverse filter-bar navbar-color-on-scroll" id="sectionsNav">--}}
-<style type="text/css">
-    .navbar.navbar-inverse .dropdown-menu li>a:focus, .navbar.navbar-inverse .dropdown-menu li>a:hover {
-        background-color: #212121 !important;
-    }
-</style>
 
-<nav class="navbar navbar-inverse" style="z-index: 9999; padding:2px 0;
-border-top-left-radius: 0; border-top-right-radius: 0px;">
+<nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse">
@@ -16,7 +10,7 @@ border-top-left-radius: 0; border-top-right-radius: 0px;">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">自(字)得其乐</a>
+            <a class="navbar-brand" href="/">自得其乐</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -45,7 +39,7 @@ border-top-left-radius: 0; border-top-right-radius: 0px;">
                         </li>
                     @endif
                 @endforeach
-            <!-- Authentication Links -->
+                <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}"><i class="material-icons">fingerprint</i> 登陆</a></li>
                     <li><a href="{{ route('signup') }}"><i class="material-icons">person_add</i> 注册</a></li>
@@ -77,8 +71,8 @@ border-top-left-radius: 0; border-top-right-radius: 0px;">
                 <li>
                     <a data-toggle="modal" data-target="#exampleModal"
                        class="navbar-toggle toggled" data-toggle="collapse"
-                       title="搜索" style="cursor:pointer; margin-top: 0px; float: none;">
-                        <i class="material-icons">search</i>
+                       title="搜索" style="cursor:pointer; margin-top: 0; float: none;">
+                       <i class="material-icons">search</i>
                     </a>
                 </li>
             </ul>

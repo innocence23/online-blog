@@ -6,7 +6,8 @@
                 <div class="text-center">
                     <h3 class="title">Subscribe to our Newsletter</h3>
                     <p class="description">
-                        Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about this.
+                        Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about
+                        this.
                     </p>
                 </div>
 
@@ -15,12 +16,14 @@
                         <form method="" action="">
                             <div class="row">
                                 <div class="col-sm-8">
-
                                     <div class="input-group">
-	        											<span class="input-group-addon">
-	        												<i class="material-icons">mail</i>
-	        											</span>
-                                        <div class="form-group is-empty"><input type="email" value="" placeholder="Your Email..." class="form-control"><span class="material-input"></span></div>
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">mail</i>
+                                        </span>
+                                        <div class="form-group is-empty">
+                                            <input type="email" placeholder="Email..." class="form-control">
+                                            <span class="material-input"></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -30,7 +33,6 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

@@ -269,6 +269,6 @@ return [
     */
 
     'plugins' => [
-        'datatables' => true,
+        //'datatables' => true,
     ],
 ];

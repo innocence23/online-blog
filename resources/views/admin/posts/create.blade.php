@@ -96,7 +96,8 @@
 @stop
 
 @section('js')
-    <script src="http://sdk.ckeditor.com/vendor/ckeditor/ckeditor.js" type="text/javascript"></script>
+    {{--<script src="http://sdk.ckeditor.com/vendor/ckeditor/ckeditor.js" type="text/javascript"></script>--}}
+    <script src="https://cdn.bootcss.com/ckeditor/4.7.2/ckeditor.js" type="text/javascript"></script>
     <script>
         $("#pic").fileinput({
             language: 'zh',

@@ -304,7 +304,6 @@
         </div>
     </div>
 
-
     <div class="subscribe-line subscribe-line-image" data-parallax="true" style="background-color: #868686">
         <div class="container">
             <div class="row">
@@ -322,13 +321,12 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col-sm-4">
-
                                         <div class="input-group">
 											<span class="input-group-addon">
                                                 <i class="material-icons">color_lens</i>
 											</span>
                                             <div class="form-group is-empty">
-                                                <input type="text" name="subject" placeholder="主题" class="form-control" id="subject">
+                                                <input type="text" value="" name="subject" placeholder="主题" class="form-control" id="subject">
                                                 <span class="material-input"></span>
                                             </div>
                                         </div>
@@ -339,7 +337,7 @@
 												<i class="material-icons">mail</i>
 											</span>
                                             <div class="form-group is-empty">
-                                                <input type="email" id="email" name="email" placeholder="邮箱" class="form-control">
+                                                <input type="email" value="" id="email" name="email" placeholder="邮箱" class="form-control">
                                                 <span class="material-input"></span>
                                             </div>
                                         </div>
@@ -351,7 +349,6 @@
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -387,7 +384,9 @@
                 $.post("/api/v1/send-email",
                     $("#contact-form").serialize(),
                     function(data){
-                        swal("Good job!", "邮件发送成功，我们会尽快联系你", "success")
+                        swal("Good job!", "邮件发送成功，我们会尽快联系你", "success");
+                        $('#subject').val('');
+                        $('#email').val('');
                     }
                 );
             });

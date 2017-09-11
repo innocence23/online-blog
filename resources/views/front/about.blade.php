@@ -20,25 +20,25 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label">真实姓名</label>
-										<input type="text" class="form-control" placeholder="真实姓名" name="name" id="name" >
+										<input type="text" value="" class="form-control" placeholder="真实姓名" name="name" id="name" >
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label">邮箱</label>
-										<input type="email" class="form-control" placeholder="邮箱" name="email" id="email" >
+										<input type="email" value="" class="form-control" placeholder="邮箱" name="email" id="email" >
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label">手机号</label>
-										<input type="text" class="form-control" placeholder="手机号" name="phone" id="phone" >
+										<input type="text" value="" class="form-control" placeholder="手机号" name="phone" id="phone" >
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label">爱好</label>
-										<input type="text" class="form-control" placeholder="爱好" name="message" id="message">
+										<input type="text" value="" class="form-control" placeholder="爱好" name="message" id="message">
 									</div>
 								</div>
 							</div>
@@ -82,7 +82,11 @@
                 $.post("/api/v1/send-email",
                     $("#contact-form").serialize(),
                     function(data){
-                        swal("Good job!", "邮件发送成功，我们会尽快联系你", "success")
+                        swal("Good job!", "邮件发送成功，我们会尽快联系你", "success");
+                        $('#message').val("");
+                        $('#phone').val("");
+                        $('#name').val("");
+                        $('#email').val("");
                     }
                 );
             });

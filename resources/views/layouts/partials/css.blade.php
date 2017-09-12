@@ -15,7 +15,7 @@
 <!-- CSS Files -->
 <link rel="stylesheet" href="{{ asset('/vendor/x_material_kit/assets/css/bootstrap.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('/vendor/x_material_kit/assets/css/material-kit.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('/css/app.css?v=001') }}" />
+<link rel="stylesheet" href="{{ asset('/css/app.css?v=003') }}" />
 
 <link rel="stylesheet" href="{{ asset('/vendor/plugins/fancybox-3.0/dist/jquery.fancybox.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('/vendor/plugins/sweetalert/dist/sweetalert.css') }}" />

@@ -28,3 +28,10 @@ nav.navbar.navbar-inverse{
     padding:1px;
     border-radius: 0 !important;
 }
+
+blockquote {
+    font-size: 11px !important;
+}
+blockquote p {
+    font-style: normal !important;
+}

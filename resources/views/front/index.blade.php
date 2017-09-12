@@ -43,10 +43,8 @@
             <div class="features-1">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2 class="title">Why our product is the best</h2>
-                        <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user
-                            engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he
-                            wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+                        <h2 class="title">为什么要选择中华文化</h2>
+                        <h5 class="description">人法地，地法天，天法道，道法自然。三才者，天地人；三光者，日月星。儒释道三家犹如三才离不开三光。儒释道之三家，相辅相成，相得益彰。</h5>
                     </div>
                 </div>
 
@@ -56,9 +54,8 @@
                             <div class="icon icon-info">
                                 <i class="material-icons">chat</i>
                             </div>
-                            <h4 class="info-title">Free Chat</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph
-                                describing a feature will be enough.</p>
+                            <h4 class="info-title">以儒治世</h4>
+                            <p>讲究持重、勤谨、正气、担当以及自省、中庸的为人处世之道，体现了中正做事的学问。</p>
                         </div>
                     </div>
 
@@ -67,9 +64,8 @@
                             <div class="icon icon-success">
                                 <i class="material-icons">verified_user</i>
                             </div>
-                            <h4 class="info-title">Verified Users</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph
-                                describing a feature will be enough.</p>
+                            <h4 class="info-title">以道治身</h4>
+                            <p>追求自然无为、返璞归真，涤除玄鉴，潇洒旷达，体现了机敏做人的学问。</p>
                         </div>
                     </div>
 
@@ -78,9 +74,8 @@
                             <div class="icon icon-danger">
                                 <i class="material-icons">fingerprint</i>
                             </div>
-                            <h4 class="info-title">Fingerprint</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph
-                                describing a feature will be enough.</p>
+                            <h4 class="info-title">以佛治心</h4>
+                            <p>主张四大皆空，慈悲宽大、包容忍让，视世间万难为无物，不怨天尤人，从自然，呈本性，体现了超脱修心的学问。</p>
                         </div>
                     </div>
                 </div>
@@ -90,20 +85,19 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="phone-container">
-                            <img src="/assets/img/iphone.png"/>
+                            <img src="/assets/center.jpg"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <br/><br/>
-                        <h2 class="title">Your life will be much easier</h2>
+                        <h2 class="title">大道至简</h2>
                         <div class="info info-horizontal">
                             <div class="icon icon-primary">
                                 <i class="material-icons">extension</i>
                             </div>
                             <div class="description">
-                                <h4 class="info-title">Hundreds of Components</h4>
-                                <p>The moment you use Material Kit, you know you’ve never felt anything like it. With a single use, this
-                                    powerfull UI Kit lets you do more than ever before. </p>
+                                <h4 class="info-title">上士闻道 勤而行之</h4>
+                                <p>上士领悟道的奥妙，勤逸实践，观察道的运行。 </p>
                             </div>
                         </div>
 
@@ -112,9 +106,8 @@
                                 <i class="material-icons">child_friendly</i>
                             </div>
                             <div class="description">
-                                <h4 class="info-title">Easy to Use</h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A
-                                    paragraph describing a feature will be enough.</p>
+                                <h4 class="info-title">中士闻道 若存若亡</h4>
+                                <p>中士领悟道运行后的表象，总觉得道变幻莫测。</p>
                             </div>
                         </div>
 
@@ -123,9 +116,8 @@
                                 <i class="material-icons">watch_later</i>
                             </div>
                             <div class="description">
-                                <h4 class="info-title">Fast Prototyping</h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A
-                                    paragraph describing a feature will be enough.</p>
+                                <h4 class="info-title">下士闻道 大笑之</h4>
+                                <p>下士领悟道的纯朴，虽不甚明白，却有闻道后的喜悦，不笑，说明连道的影子都没摸着，不足以为道。</p>
                             </div>
                         </div>
                     </div>
@@ -138,9 +130,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 class="title">Some of Our Awesome Products - 2</h2>
-                    <h5 class="description">This is the paragraph where you can write more details about your projects. Keep you user
-                        engaged by providing meaningful information.</h5>
+                    <h2 class="title">古诗文欣赏</h2>
+                    <h5 class="description">夫天地者，万物之逆旅也；光阴者，百代之过客也。而浮生若梦，为欢几何？</h5>
+                    <h4 class="description">人生天地间 忽如远行客</h4>
                     <div class="section-space"></div>
                 </div>
             </div>
@@ -148,20 +140,15 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card card-plain">
-                        <a href="http://www.creative-tim.com/product/material-kit" target="_blank">
-                            <div class="card-image">
-                                <img src="http://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg?1458052306"/>
-                            </div>
-                        </a>
+                        <div class="card-image">
+                            <img src="/assets/cihua1.jpg"/>
+                        </div>
                         <div class="content">
-                            <a href="http://www.creative-tim.com/product/material-kit" target="_blank">
-                                <h4 class="card-title">Material Kit Free</h4>
-                            </a>
-                            <h6 class="category">Free UI Kit</h6>
+                            <h4 class="card-title">山有扶苏，隰有荷华。</h4>
+                            <h6 class="category text-primary">国风</h6>
                             <p class="card-description">
-                                Material Kit is a Free Bootstrap UI Kit with a fresh, new design inspired by Google's material design. It's
-                                a great pleasure to introduce to you the material concepts in an easy to use and beautiful set of
-                                components.
+                                山有扶苏，隰有荷华。不见子都，乃见狂且。<br/>
+                                山有乔松，隰有游龙，不见子充，乃见狡童。
                             </p>
                         </div>
                     </div>
@@ -169,20 +156,15 @@
 
                 <div class="col-md-4">
                     <div class="card card-plain">
-                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank">
-                            <div class="card-image">
-                                <img src="http://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg?1458052306"/>
-                            </div>
-                        </a>
+                        <div class="card-image">
+                            <img src="/assets/cihua2.jpg"/>
+                        </div>
                         <div class="content">
-
-                            <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank">
-                                <h4 class="card-title">Light Bootstrap Dashboard</h4>
-                            </a>
-                            <h6 class="category">Premium Template</h6>
+                            <h4 class="card-title">山有木兮木有枝，心悦君兮君不知。</h4>
+                            <h6 class="category text-success">越人歌</h6>
                             <p class="card-description">
-                                Light Bootstrap Dashboard PRO is a Bootstrap Admin Theme designed to look simple and beautiful. Forget about
-                                boring dashboards and grab yourself a copy to kickstart new project!
+                                我见青山多妩媚，料青山见我应如是。<br/>
+                                不入园林，怎知春色如许？
                             </p>
                         </div>
                     </div>
@@ -190,19 +172,15 @@
 
                 <div class="col-md-4">
                     <div class="card card-plain">
-                        <a href="http://www.creative-tim.com/product/get-shit-done-pro" target="_blank">
-                            <div class="card-image">
-                                <img src="http://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg?1458052306"/>
-                            </div>
-                        </a>
+                        <div class="card-image">
+                            <img src="/assets/cihua3.jpg"/>
+                        </div>
                         <div class="content">
-                            <a href="http://www.creative-tim.com/product/get-shit-done-pro" target="_blank">
-                                <h4 class="card-title">Get Shit Done Kit PRO</h4>
-                            </a>
-                            <h6 class="category text-info">Premium UI Kit</h6>
+                            <h4 class="card-title">桃李春风一杯酒，江湖夜雨十年灯。</h4>
+                            <h6 class="category text-info">黄庭坚</h6>
                             <p class="card-description">
-                                Get Shit Done Kit Pro it's a Bootstrap Kit that comes with a huge number of customisable components. They
-                                are pixel perfect, light and easy to use and combine with other elements.
+                                我居北海君南海，寄雁传书谢不能。<br/>
+                                桃李春风一杯酒，江湖夜雨十年灯。
                             </p>
                         </div>
                     </div>
@@ -211,17 +189,13 @@
         </div>
     </div>
 
-    <a href="javascript:scroll(0,0)" class="button">返回顶部</a>
-
-
     <div class="cd-section" id="testimonials">
         <div class="testimonials-1 section-image" style="background-image: url('uploads/{{ $carousels[0]->pic}}')">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
-                        <h2 class="title">Our Clients Love Us</h2>
-                        <h5 class="description">You need more information? Check what other persons are saying about our product. They are
-                            very happy with their purchase.</h5>
+                        <h2 class="title">随便聊聊</h2>
+                        <h5 class="description">天地无全功，圣人无全能，万物无全用.</h5>
                     </div>
                 </div>
 
@@ -233,17 +207,16 @@
                             </div>
                             <div class="content">
                                 <h5 class="card-description">
-                                    Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
-                                    the color mixtures, cards... everything. Keep up the great work!
+                                    积善之家，必有余庆；积不善之家，必有余殃。
                                 </h5>
                             </div>
 
                             <div class="footer">
-                                <h4 class="card-title">Alec Thompson</h4>
-                                <h6 class="category">@alecthompson</h6>
+                                <h4 class="card-title">易经</h4>
+                                <h6 class="category">@儒</h6>
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}"/>
+                                        <img class="img" src="{{ asset('/assets/placeholder.jpg') }}"/>
                                     </a>
                                 </div>
                             </div>
@@ -257,17 +230,16 @@
                             </div>
                             <div class="content">
                                 <h5 class="card-description">
-                                    "Don't be scared of the truth because we need to restart the human foundation in truth. That's why I
-                                    love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is not so attractive"
+                                    道生一，一生二，二生三，三生万物。万物负阴而抱阳，充气以为和。
                                 </h5>
                             </div>
 
                             <div class="footer">
-                                <h4 class="card-title">Gina Andrew</h4>
-                                <h6 class="category">@ginaandrew</h6>
+                                <h4 class="card-title">老子</h4>
+                                <h6 class="category">@道</h6>
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}"/>
+                                        <img class="img" src="{{ asset('/assets/placeholder.jpg') }}"/>
                                     </a>
                                 </div>
                             </div>
@@ -281,23 +253,21 @@
                             </div>
                             <div class="content">
                                 <h5 class="card-description">
-                                    "Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
-                                    the color mixtures, cards... everything. Keep up the great work!"
+                                    色不亦空，空不亦色，色即是空，空即是色。
                                 </h5>
                             </div>
 
                             <div class="footer">
-                                <h4 class="card-title">George West</h4>
-                                <h6 class="category">@georgewest</h6>
+                                <h4 class="card-title">心经</h4>
+                                <h6 class="category">@释</h6>
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}"/>
+                                        <img class="img" src="{{ asset('/assets/placeholder.jpg') }}"/>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
             </div>

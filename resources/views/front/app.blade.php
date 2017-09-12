@@ -19,6 +19,12 @@
         .features-4 .info:first-child {
             padding-top: 60px;
         }
+        @media screen and (max-width: 800px) {
+            h3, h4, h5, h6, p, a {
+                font-size: 1.6em !important;
+                font-weight: 500 !important;
+            }
+        }
     </style>
     <script src="{{ asset('/vendor/plugins/fullPage/js/jquery-1.8.3.min.js') }}"></script>
     <script src="{{ asset('/vendor/plugins/fullPage/js/jquery-ui-1.10.3.min.js') }}"></script>
@@ -196,91 +202,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center">
-                <h2 class="title">Our Awesome Team 1</h2>
-                <h5 class="description">This is the paragraph where you can write more details about your team. Keep you user engaged by providing meaningful information.</h5>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card card-profile card-plain">
-                    <div class="card-avatar">
-                        <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
-                        </a>
-                    </div>
-
-                    <div class="content">
-                        <h4 class="card-title">Alec Thompson</h4>
-                        <h6 class="category text-muted">CEO / Co-Founder</h6>
-
-                        <p class="card-description">
-                            And I love you like Kanye loves Kanye. We need to restart the human foundation.
-                        </p>
-                        <div class="footer">
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-facebook"><i class="fa fa-facebook-square"></i></a>
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fa fa-google"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card card-profile card-plain">
-                    <div class="card-avatar">
-                        <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
-                        </a>
-                    </div>
-
-                    <div class="content">
-                        <h4 class="card-title">Tania Andrew</h4>
-                        <h6 class="category text-muted">Designer</h6>
-
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation. And I love you like Kanye loves Kanye.
-                        </p>
-                        <div class="footer">
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-linkedin"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card card-profile card-plain">
-                    <div class="card-avatar">
-                        <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
-                        </a>
-                    </div>
-
-                    <div class="content">
-                        <h4 class="card-title">Christian Mike</h4>
-                        <h6 class="category text-muted">Web Developer</h6>
-
-                        <p class="card-description">
-                            I love you like Kanye loves Kanye. Don't be scared of the truth because we need to restart the human foundation.
-                        </p>
-                        <div class="footer">
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-facebook"><i class="fa fa-facebook-square"></i></a>
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 

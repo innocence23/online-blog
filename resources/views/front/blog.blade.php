@@ -1,6 +1,8 @@
 @extends('layouts.front')
 
-@section('html_title', '博客')
+@section('html_title')
+   {{ $blog->title or "博客"}}
+@endsection
 
 @section('main-content')
     <div class="main main-raised">

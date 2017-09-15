@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+	protected $fillable = ['name', 'created_by', 'updated_by'];
+	// protected $guarded = [];
     //
     static public function tagList()
     {

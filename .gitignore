@@ -9,8 +9,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
-/public/ckuploadfiles/
-/public/uploads/
-/storage/*.gitignore
+/public/ckuploadfiles
+/public/uploads
+/storage
 /bootstrap/*.gitignore
 

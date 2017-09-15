@@ -28,10 +28,11 @@ nav.navbar.navbar-inverse{
     padding:1px;
     border-radius: 0 !important;
 }
-
 blockquote {
     font-size: 11px !important;
+    background-color: #474949;
 }
 blockquote p {
     font-style: normal !important;
+    color: white !important;
 }

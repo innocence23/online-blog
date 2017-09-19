@@ -194,6 +194,11 @@
                         uniqueId: "id",                     //每一行的唯一标识，一般为主键列
                         url: "{{route('friend-link.lists')}}",
                         columns: [{
+                            field: 'id',
+                            title: 'ID',
+                            valign: 'middle',
+                            sortable: true
+                        }, {
                             field: 'name',
                             title: '名称',
                             valign: 'middle',
@@ -246,7 +251,11 @@
                     $("#table").bootstrapTable('refresh', {url: "{{route('friend-link.lists')}}"});
                     //主要解决在不是第一页搜索的情况下 如在第二页搜索搜索不到数据，但其实第一页是有数据的
                 };
-
+                //回车搜索事件
+                $('#search-name').keypress(function(event){
+                    if(event.keyCode == "13")
+                        $scope.btnquery();
+                });
                 //禁用按钮事件
                 $scope.disableditem = function (status, id) {
                     swal({

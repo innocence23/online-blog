@@ -84,6 +84,11 @@
 
 @section('js')
     <script>
+        //回车搜索事件
+        $('#search-name').keypress(function(event){
+            if(event.keyCode == "13")
+                btnquery();
+        });
         $('#table').bootstrapTable({
             striped: true,                      //是否显示行间隔色
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
@@ -117,6 +122,11 @@
             uniqueId: "id",                     //每一行的唯一标识，一般为主键列
             url: "{{route('post.lists')}}",
             columns: [{
+                field: 'id',
+                title: 'ID',
+                valign: 'middle',
+                sortable: true
+            },{
                 field: 'title',
                 title: '名称',
                 valign: 'middle',

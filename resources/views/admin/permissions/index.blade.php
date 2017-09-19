@@ -134,7 +134,12 @@
                         uniqueId: "id",                     //每一行的唯一标识，一般为主键列
                         url: "{{route('permission.lists')}}",
 
-                        columns: [
+                        columns: [{
+                                field: 'id',
+                                title: 'ID',
+                                valign: 'middle',
+                                sortable: true
+                            },
                             {
                                 field: 'name',
                                 title: '名称',
@@ -143,7 +148,7 @@
                             },{
                                 field: 'display_name',
                                 title: '权限描述',
-                                valign: 'middle',
+                                valign: 'middle'
                             }, {
                                 field: 'created_at',
                                 title: '创建时间',
@@ -164,7 +169,11 @@
                     $("#table").bootstrapTable('refresh', {url: "{{route('permission.lists')}}"});
                     //主要解决在不是第一页搜索的情况下 如在第二页搜索搜索不到数据，但其实第一页是有数据的
                 };
-
+                //回车搜索事件
+                $('#search-name').keypress(function(event){
+                    if(event.keyCode == "13")
+                        $scope.btnquery();
+                });
                 //禁用按钮事件
                 $scope.disableditem = function (status, id) {
                     swal({

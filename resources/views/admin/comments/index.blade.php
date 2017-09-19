@@ -88,6 +88,11 @@
             uniqueId: "id",                     //每一行的唯一标识，一般为主键列
             url: "{{route('comment.lists')}}",
             columns: [{
+                field: 'id',
+                title: 'ID',
+                valign: 'middle',
+                sortable: true
+            }, {
                 field: 'post_id',
                 title: '评论人文章id',
                 valign: 'middle'

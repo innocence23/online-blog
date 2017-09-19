@@ -156,6 +156,11 @@
                         url: "{{route('single-page.lists')}}",
                         columns: [{
                             field: 'id',
+                            title: 'ID',
+                            valign: 'middle',
+                            sortable: true
+                        }, {
+                            field: 'id',
                             title: 'Id',
                             valign: 'middle'
                         },{
@@ -192,7 +197,11 @@
                     $("#table").bootstrapTable('refresh', {url: "{{route('single-page.lists')}}"});
                     //主要解决在不是第一页搜索的情况下 如在第二页搜索搜索不到数据，但其实第一页是有数据的
                 };
-
+                //回车搜索事件
+                $('#search-name').keypress(function(event){
+                    if(event.keyCode == "13")
+                        $scope.btnquery();
+                });
                 //获取类型
                 $http.get("{{route('api.config.singletype')}}")
                     .then(function successCallback(response) {

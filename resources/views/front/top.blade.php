@@ -29,8 +29,6 @@
 							{{--处理俩个一组--}}
 							@if($k == 1)
 								<div class="row">
-							@elseif($k == 2)
-								</div>
 							@endif
 							<div class="col-sm-6">
 								<div class="card card-raised card-background" style="background-image: url('{{ '/uploads/'.$v->pic }}')">
@@ -48,6 +46,9 @@
 									</div>
 								</div>
 							</div>
+							@if($k == 2)
+								</div>
+							@endif
 						@else
 							{{--处理三个一组--}}
 							@if($k == 3)

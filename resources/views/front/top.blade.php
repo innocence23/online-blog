@@ -6,7 +6,6 @@
 	<div class="main main-raised">
 		<div class="container">
 			<div class="section" style="padding:50px 0 16px;">
-				<div class="row">
 					@foreach($blogs as $k=>$v)
 						@if ($k == 0)
 							<div class="row">
@@ -46,14 +45,14 @@
 									</div>
 								</div>
 							</div>
-							@if($k == 2)
-								</div>
+							@if($k == 2 || count($blogs) == 2)
+							</div>
 							@endif
 						@else
 							{{--处理三个一组--}}
 							@if($k == 3)
 							<div class="row">
-							@elseif(($k)%3 == 0)
+							@elseif( $k%3 == 0)
 							</div>
 							<div class="row">
 							@endif
@@ -77,6 +76,10 @@
 							</div>
 						@endif
 					@endforeach
+					{{-- 闭合标签 --}}
+					@if(count($blogs)%3 != 0)
+						</div>
+					@endif
 				</div>
 			</div>
 

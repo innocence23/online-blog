@@ -1,4 +1,3 @@
-<!--     *********    BIG FOOTER     *********      -->
 <footer class="footer footer-black footer-big">
     <div class="container">
         <div class="content">
@@ -42,4 +41,3 @@
         @include('layouts.partials.copyright')
     </div>
 </footer>
-<!--     *********   END BIG FOOTER     *********      -->

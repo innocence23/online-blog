@@ -1,6 +1,5 @@
 {{--<nav class="navbar navbar-inverse filter-bar navbar-fixed-top">--}}
 {{--<nav class="navbar navbar-inverse filter-bar navbar-color-on-scroll" id="sectionsNav">--}}
-
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
@@ -39,7 +38,7 @@
                         </li>
                     @endif
                 @endforeach
-                <!-- Authentication Links -->
+            <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}"><i class="material-icons">fingerprint</i> 登陆</a></li>
                     <li><a href="{{ route('signup') }}"><i class="material-icons">person_add</i> 注册</a></li>
@@ -59,20 +58,20 @@
                             <li>
                                 <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                    href="{{ route('logout') }}"><i class="material-icons">forward</i> 登出</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>
                         </ul>
                     </li>
-                @endif
-                <!-- Button trigger modal -->
-
+            @endif
+            <!-- Button trigger modal -->
                 <li>
                     <a data-toggle="modal" data-target="#exampleModal"
                        class="navbar-toggle toggled" data-toggle="collapse"
                        title="搜索" style="cursor:pointer; margin-top: 0; float: none;">
-                       <i class="material-icons">search</i>
+                        <i class="material-icons">search</i>
                     </a>
                 </li>
             </ul>

@@ -3,16 +3,16 @@
 $jssdk = getWeixinSdk();
 $signPackage = $jssdk->GetSignPackage();
 if (isset($blog->pic)) {
-    $wx_image = '/uploads/'. $blog->pic ;
+    $wx_image = '/uploads/' . $blog->pic;
 } else {
-    $wx_image = '/assets/placeholder.jpg';
+    $wx_image = '/assets/img/placeholder.jpg';
 }
 ?>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
     //微信分享图片
     wx.config({
-        debug:  false,  //调式模式，设置为ture后会直接在网页上弹出调试信息，用于排查问题
+        debug: false,  //调式模式，设置为ture后会直接在网页上弹出调试信息，用于排查问题
         appId: '<?php echo $signPackage["appId"];?>',
         timestamp: '<?php echo $signPackage["timestamp"];?>',
         nonceStr: '<?php echo $signPackage["nonceStr"];?>',

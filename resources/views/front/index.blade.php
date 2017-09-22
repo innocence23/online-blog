@@ -85,7 +85,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="phone-container">
-                            <img src="/assets/center.jpg"/>
+                            <img src="/assets/img/center.jpg"/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -141,7 +141,7 @@
                 <div class="col-md-4">
                     <div class="card card-plain">
                         <div class="card-image">
-                            <img src="/assets/cihua1.jpg"/>
+                            <img src="/assets/img/cihua1.jpg"/>
                         </div>
                         <div class="content">
                             <h4 class="card-title">山有扶苏，隰有荷华。</h4>
@@ -157,7 +157,7 @@
                 <div class="col-md-4">
                     <div class="card card-plain">
                         <div class="card-image">
-                            <img src="/assets/cihua2.jpg"/>
+                            <img src="/assets/img/cihua2.jpg"/>
                         </div>
                         <div class="content">
                             <h4 class="card-title">山有木兮木有枝，心悦君兮君不知。</h4>
@@ -173,7 +173,7 @@
                 <div class="col-md-4">
                     <div class="card card-plain">
                         <div class="card-image">
-                            <img src="/assets/cihua3.jpg"/>
+                            <img src="/assets/img/cihua3.jpg"/>
                         </div>
                         <div class="content">
                             <h4 class="card-title">桃李春风一杯酒，江湖夜雨十年灯。</h4>
@@ -216,7 +216,7 @@
                                 <h6 class="category">@儒</h6>
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('/assets/placeholder.jpg') }}"/>
+                                        <img class="img" src="{{ asset('/assets/img/placeholder.jpg') }}"/>
                                     </a>
                                 </div>
                             </div>
@@ -239,7 +239,7 @@
                                 <h6 class="category">@道</h6>
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('/assets/placeholder.jpg') }}"/>
+                                        <img class="img" src="{{ asset('/assets/img/placeholder.jpg') }}"/>
                                     </a>
                                 </div>
                             </div>
@@ -262,7 +262,7 @@
                                 <h6 class="category">@释</h6>
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('/assets/placeholder.jpg') }}"/>
+                                        <img class="img" src="{{ asset('/assets/img/placeholder.jpg') }}"/>
                                     </a>
                                 </div>
                             </div>

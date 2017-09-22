@@ -59,7 +59,7 @@ function tree($arr, $pid=0){
                     <img src="/uploads/'.$result[1].'" style="max-height: 140px" width="40%" height="40%"/></a>',
                     $content);
             }
-            $avatar = $v->avatar ?: '/assets/placeholder.jpg';
+            $avatar = $v->avatar ?: '/assets/img/placeholder.jpg';
             $nickname = $v->nickname ?: $v->name;
             $str .=  <<<EOF
 <div class="media">

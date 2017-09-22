@@ -10,7 +10,6 @@
                         this.
                     </p>
                 </div>
-
                 <div class="card card-raised card-form-horizontal">
                     <div class="card-content">
                         <form method="" action="">

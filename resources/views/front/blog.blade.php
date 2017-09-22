@@ -67,7 +67,7 @@
                         </div>
                         <a class="pull-left author" href="#pablo">
                             <div class="avatar">
-                                <img class="media-object" alt="64x64" src="{{ asset('/assets/placeholder.jpg') }}">
+                                <img class="media-object" alt="64x64" src="{{ asset('/assets/img/placeholder.jpg') }}">
                             </div>
                         </a>
 
@@ -113,7 +113,7 @@
                         </div>
                         <a class="pull-left author" href="#pablo">
                             <div class="avatar">
-                                <img class="media-object" alt="64x64" src="{{ \Auth::user()->avatar ?: asset('/assets/placeholder.jpg') }}">
+                                <img class="media-object" alt="64x64" src="{{ \Auth::user()->avatar ?: asset('/assets/img/placeholder.jpg') }}">
                             </div>
                         </a>
                         <div class="media-body">

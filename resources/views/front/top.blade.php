@@ -9,7 +9,8 @@
 				<div class="row">
 					@foreach($blogs as $k=>$v)
 						@if ($k == 0)
-							<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-12">
 								<div class="card card-raised card-background" style="background-image: url('{{ '/uploads/'.$v->pic }}')">
 									<div class="card-content">
 										<h6 class="category text-info"></h6>
@@ -23,7 +24,14 @@
 									</div>
 								</div>
 							</div>
+							</div>
 						@elseif ($k == 1 || $k == 2)
+							{{--处理俩个一组--}}
+							@if($k == 1)
+								<div class="row">
+							@elseif($k == 2)
+								</div>
+							@endif
 							<div class="col-sm-6">
 								<div class="card card-raised card-background" style="background-image: url('{{ '/uploads/'.$v->pic }}')">
 									<div class="card-content">
@@ -41,6 +49,7 @@
 								</div>
 							</div>
 						@else
+							{{--处理三个一组--}}
 							@if($k == 3)
 							<div class="row">
 							@elseif(($k)%3 == 0)

@@ -6,7 +6,6 @@
 	<div class="main main-raised">
 		<div class="container">
 			<div class="section" style="padding:50px 0 16px;">
-
 				@if (isset($categories))
 					<div class="row">
 						<div class="col-md-12 text-center">
@@ -22,9 +21,8 @@
 						</div>
 					</div>
 				@endif
-
 				<div class="row">
-					@foreach($blogs as $v)
+					@foreach($blogs as $k=>$v)
 						<div class="col-sm-3">
 							<div class="card card-profile">
 								<a href="{{ route('blog', $v->slug)}}" title="{{ $v->desc }}">
@@ -41,7 +39,6 @@
 											{{ $v->title }}
 										</a>
 									</h5>
-
 									<h6 class="category text-black">
 										<a href="#pablo"><b>{{ $v->user->name }}</b></a>
 										<b> {{ \Carbon\Carbon::parse($v->created_at)->diffForHumans() }} </b>
@@ -60,12 +57,14 @@
 								</div>
 							</div>
 						</div>
+						@if($k && ($k+1)%4 == 0)
+						</div>
+						<div class="row">
+						@endif
 					@endforeach
 				</div>
-
 				{!! $blogs->links() !!}
 			</div>
-
 		</div>
 	</div>
 @endsection

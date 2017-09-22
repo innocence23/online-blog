@@ -20,7 +20,6 @@
 										<a href="{{ route('blog', $v->slug)}}" title="{{ $v->title }}" class="btn btn-warning btn-round">
 											<i class="material-icons">subject</i> Read Article
 										</a>
-
 									</div>
 								</div>
 							</div>
@@ -42,6 +41,12 @@
 								</div>
 							</div>
 						@else
+							@if($k == 3)
+							<div class="row">
+							@elseif(($k)%3 == 0)
+							</div>
+							<div class="row">
+							@endif
 							<div class="col-sm-4">
 								<div class="card card-plain">
 									<div class="card-image">

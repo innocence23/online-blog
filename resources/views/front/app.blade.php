@@ -5,10 +5,9 @@
     <title>APP | 自得其乐</title>
     <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('/vendor/x_material_kit/assets/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/vendor/x_material_kit/assets/css/material-kit.min.css') }}" />
+    <link rel="stylesheet" href="{{ mix('/assets/css/app.css') }}" />
     <link rel="stylesheet" href="{{ asset('/vendor/plugins/fullPage/css/jquery.fullPage.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/vendor/x_material_kit/assets/css/vertical-nav.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/vendor/plugins/vertical-nav.css') }}" />
     <style>
         .section.table {
             padding: 0 !important;
@@ -220,7 +219,7 @@
                 <div class="card card-profile card-plain">
                     <div class="card-image">
                         <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                            <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                         </a>
                     </div>
 
@@ -241,7 +240,7 @@
                 <div class="card card-profile card-plain">
                     <div class="card-image">
                         <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                            <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                         </a>
                     </div>
 
@@ -262,7 +261,7 @@
                 <div class="card card-profile card-plain">
                     <div class="card-image">
                         <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                            <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                         </a>
                     </div>
 
@@ -299,7 +298,7 @@
                     <div class="col-md-5">
                         <div class="card-image">
                             <a href="#pablo">
-                                <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                                <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                             </a>
                         </div>
                     </div>
@@ -327,7 +326,7 @@
                     <div class="col-md-5">
                         <div class="card-image">
                             <a href="#pablo">
-                                <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                                <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                             </a>
                         </div>
                     </div>
@@ -356,7 +355,7 @@
                     <div class="col-md-5">
                         <div class="card-image">
                             <a href="#pablo">
-                                <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                                <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                             </a>
                         </div>
                     </div>
@@ -384,7 +383,7 @@
                     <div class="col-md-5">
                         <div class="card-image">
                             <a href="#pablo">
-                                <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                                <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                             </a>
                         </div>
                     </div>
@@ -509,7 +508,7 @@
                 <div class="card card-testimonial card-plain">
                     <div class="card-avatar">
                         <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                            <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                         </a>
                     </div>
 
@@ -525,7 +524,7 @@
                 <div class="card card-testimonial card-plain">
                     <div class="card-avatar">
                         <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                            <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                         </a>
                     </div>
 
@@ -541,7 +540,7 @@
                 <div class="card card-testimonial card-plain">
                     <div class="card-avatar">
                         <a href="#pablo">
-                            <img class="img" src="{{ asset('/assets/img/faces/avatar.jpg') }}" />
+                            <img class="img" src="{{ asset('/assets/img/other.jpg') }}" />
                         </a>
                     </div>
 

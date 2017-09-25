@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'collapse_sidebar' => false,
+    'collapse_sidebar' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -135,6 +135,27 @@ return [
             'text' => '评论管理',
             'url'  => '/admin/comment/',
             'icon' => 'comment-o',
+        ],
+        '字典管理',
+        [
+            'text' => '部首管理',
+            'url'  => '/admin/dict/bushou/',
+            'icon' => 'star-half-o',
+        ],
+        [
+            'text' => '栏目管理',
+            'url'  => '/admin/dict/category/',
+            'icon' => 'th-list',
+        ],
+        [
+            'text' => '字典管理',
+            'url'  => '/admin/dict/dict/',
+            'icon' => 'book',
+        ],
+        [
+            'text' => '字典评论管理',
+            'url'  => '/admin/dict/comment/',
+            'icon' => 'comments-o',
         ],
         '账号管理',
         [

@@ -59,6 +59,36 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('comment/{comment}', 'CommentController@disable')->name('comment.disable');
     Route::get('comment', 'CommentController@index')->name('comment.index');
 
+    //字典
+    Route::group(['prefix' => 'dict'], function () {
+        //字典栏目
+        Route::get('category/lists', 'DictCategoryController@getLists')->name('dict.category.lists');
+        Route::post('category/{category}', 'DictCategoryController@disable')->name('dict.category.disable');
+        Route::post('category-order', 'DictCategoryController@order')->name('dict.category.order');
+        Route::resource('category', 'DictCategoryController', ['only' =>
+            ['index', 'store', 'update', 'show'],
+            'names' => 'dict.category'
+        ]);
+
+        //部首
+        Route::get('bushou/lists', 'DictBushouController@getLists')->name('dict.bushou.lists');
+        Route::post('bushou/{bushou}', 'DictBushouController@disable')->name('dict.bushou.disable');
+        Route::resource('bushou', 'DictBushouController', ['names' => 'dict.bushou']);
+
+        //字典
+        Route::get('dict/lists', 'DictController@getLists')->name('dict.lists');
+        Route::get('dict/catetag', 'DictController@cateAndBushou')->name('dict.catebushou');
+        Route::post('dict/{dict}', 'DictController@disable')->name('dict.disable');
+        Route::resource('dict', 'DictController', ['only' =>
+            ['index', 'create', 'store', 'edit', 'update', 'show']
+        ]);
+
+        //字典评论
+        Route::get('comment/lists', 'DictCommentController@getLists')->name('dict.comment.lists');
+        Route::post('comment/{comment}', 'DictCommentController@disable')->name('dict.comment.disable');
+        Route::get('comment', 'DictCommentController@index')->name('dict.comment.index');
+    });
+
     //前台用户
     Route::get('front-user/lists', 'FrontUserController@getLists')->name('front-user.lists');
     Route::post('front-user/{user}', 'FrontUserController@disable')->name('front-user.disable');
@@ -104,7 +134,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
         ['index', 'store', 'edit', 'update', 'show']
     ]);
 
-    //友情链接
+    //首页轮播图
     Route::get('carousel/lists', 'CarouselController@getLists')->name('carousel.lists');
     Route::post('carousel/{carousel}', 'CarouselController@disable')->name('carousel.disable');
     Route::resource('carousel', 'CarouselController', ['only' =>

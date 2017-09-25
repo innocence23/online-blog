@@ -79,9 +79,6 @@ class PostController extends Controller
      */
     public function cateAndTag()
     {
-        //old categories
-        $data['categories'] = Category::all(['id','name']);
-
         $data['categories'] = [];
         $categories = Category::where('status', 1)->orderby('weight', 'desc')->get(['id','name', 'pid']);
         if($categories){

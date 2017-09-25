@@ -253,7 +253,7 @@
                             </div>
                             <div class="content">
                                 <h5 class="card-description">
-                                    色不亦空，空不亦色，色即是空，空即是色。
+                                    舍利子！色不异空，空不异色；色即是空，空即是色。受想行识，亦复如是。
                                 </h5>
                             </div>
 

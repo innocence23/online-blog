@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
 <head>
-    @include('layouts.partials.css')
+@include('layouts.partials.css')
 </head>
 <body class="index-page">
 @include('layouts.partials.navbar')
